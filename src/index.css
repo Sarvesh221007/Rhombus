@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Optional — smooth fade-in animation for sidebar content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* src/index.css or tailwind.css */
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.7); /* ✅ visible on light background */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease,
+              transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 99999;
+}
+
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.85); /* black-ish for visibility */
+  transform: translate(-50%, -50%) scale(1.1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px inset rgba(255, 255, 255, 0.2);
+}
+
+span{
+  color: rgb(14, 174, 223);
+}
+

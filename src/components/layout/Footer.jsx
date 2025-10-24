@@ -1,80 +1,84 @@
 import React from "react";
-import { Mail, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
-import logo from "/logo.svg"; // <-- your logo path
+import { Mail, Phone, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
+import logo from "/logo.svg";
 
 const Footer = () => {
   const navLinks = ["Home", "About", "Services", "FAQ", "Contact"];
   const socialIcons = [
-    { icon: <Facebook className="w-5 h-5" />, link: "#" },
-    { icon: <Twitter className="w-5 h-5" />, link: "#" },
-    { icon: <Linkedin className="w-5 h-5" />, link: "#" },
-    { icon: <Instagram className="w-5 h-5" />, link: "#" },
+    { icon: <Linkedin size={20} />, link: "#" },
+    { icon: <Twitter size={20} />, link: "#" },
+    { icon: <Youtube size={20} />, link: "#" },
+    { icon: <Facebook size={20} />, link: "#" },
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 mt-8">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
-        {/* Logo & Description */}
-        <div className="flex flex-col items-center md:items-start space-y-4">
-          <img src={logo} alt="Rhombus Education Logo" className="w-32 mx-auto md:mx-0" />
-          <p className="text-gray-400 text-sm">
+    <footer className="w-full" style={{ backgroundColor: "#0E3530" }}>
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* Top Section: Logo + Description */}
+        <div className="flex flex-col items-center md:items-start space-y-4 mb-12">
+          <img src={logo} alt="Rhombus Logo" className="h-12 w-auto" />
+          <p className="text-white/80 text-center md:text-left text-sm md:text-base max-w-lg">
             Helping students achieve their dreams with expert guidance on education and immigration services.
           </p>
         </div>
 
-        {/* Navigation Links */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Company</h3>
-          <ul className="space-y-2">
-            {navLinks.map((link, idx) => (
-              <li
-                key={idx}
-                className="hover:text-blue-500 transition-colors cursor-pointer"
-              >
-                {link}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Middle Section: 4 Columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 text-white">
+          {/* Company Links */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-white mb-2">Company</h4>
+            <ul className="space-y-1 text-white/80">
+              {navLinks.map((link, idx) => (
+                <li key={idx} className="hover:text-teal-400 transition cursor-pointer">{link}</li>
+              ))}
+            </ul>
+          </div>
 
-        {/* Contact Info */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Get in Touch</h3>
-          <ul className="space-y-4">
-            <li className="flex items-center justify-center md:justify-start gap-2">
-              <Phone className="text-blue-500 w-5 h-5" />
-              <span>8826841955, 8050796619</span>
-            </li>
-            <li className="flex items-center justify-center md:justify-start gap-2">
-              <Mail className="text-blue-500 w-5 h-5" />
-              <span>Info@rhombuseducation.com</span>
-            </li>
-          </ul>
-        </div>
+          {/* Contact Info */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-white mb-2">Contact</h4>
+            <p className="flex items-center gap-2">
+              <Phone size={16} /> 8826841955, 8050796619
+            </p>
+            <p className="flex items-center gap-2">
+              <Mail size={16} /> Info@rhombuseducation.com
+            </p>
+          </div>
 
-        {/* Social Media */}
-        <div>
-          <h3 className="text-white font-semibold mb-4">Follow Us</h3>
-          <div className="flex justify-center md:justify-start gap-4">
-            {socialIcons.map((item, idx) => (
-              <a
-                key={idx}
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-500 transition-colors"
-              >
-                {item.icon}
-              </a>
-            ))}
+          {/* Address / Location */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-white mb-2">Address</h4>
+            <p>Seventh Ave, 20th Floor</p>
+            <p>New York, NY 10018</p>
+          </div>
+
+          {/* Social Media */}
+          <div className="space-y-2">
+            <h4 className="font-semibold text-white mb-2">Follow Us</h4>
+            <div className="flex gap-4">
+              {socialIcons.map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-teal-400 transition"
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Text */}
-      <div className="max-w-6xl mx-auto px-4 mt-12 text-center text-gray-500 text-sm">
-        <p>&copy; {new Date().getFullYear()} Rhombus Education. All rights reserved.</p>
-        <p className="mt-1">Made with ❤️ using React + Vite</p>
+        {/* Bottom Section: Divider + Copyright */}
+        <div className="mt-12 border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center text-white/70 text-sm md:text-base gap-2">
+          <p>2025 © VamTam. All rights reserved.</p>
+          <div className="flex gap-4">
+            <a href="/terms" className="hover:text-teal-400 transition">Terms & Conditions</a>
+            <a href="/privacy" className="hover:text-teal-400 transition">Privacy Policy</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

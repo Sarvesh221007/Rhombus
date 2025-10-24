@@ -1,128 +1,262 @@
-import React, { useRef, useEffect } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react"; 
 import founder from "/about/founder.jpeg";
 import coFounder from "/about/co_founder.jpg";
 import sManager from "/about/s_manager.jpg";
 
 const teamMembers = [
-    { name: "Heena Gupta", title: "Founder & CEO", image: founder },
-    { name: "Debraj Banerjee", title: "Co-Founder & Director", image: coFounder },
-    { name: "Monalisa Guha", title: "Senior Admission Manager", image: sManager },
-    { name: "Heena Gupta", title: "Founder & CEO", image: founder },
-    { name: "Debraj Banerjee", title: "Co-Founder & Director", image: coFounder },
-    { name: "Monalisa Guha", title: "Senior Admission Manager", image: sManager },
+  { name: "Debraj Banerjee", title: "Co-Founder & Director", image: coFounder },
+  { name: "Monalisa Guha", title: "Senior Admission Manager", image: sManager },
+  { name: "Heena Gupta", title: "Founder & CEO", image: founder },
 ];
 
-const MotionSection = ({ children, ...props }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        {...props}
-    >
-        {children}
-    </motion.div>
-);
-
 const About = () => {
-    const sectionRef = useRef(null);
-    const controls = useAnimation();
-    const inView = useInView(sectionRef, { once: true });
+  const tickItems = [
+    "Over 15 years of expertise in international education.",
+    "Personalized guidance for each student.",
+    "Trusted partner of the British Council.",
+    "Smooth support from application to visa approval.",
+  ];
 
-    useEffect(() => {
-        if (inView) controls.start({ opacity: 1, y: 0, transition: { duration: 1.2 } });
-    }, [controls, inView]);
+  return (
+    <div className="font-sans overflow-x-hidden text-[rgba(0,0,0,0.75)]">
 
-    return (
-        <div className="overflow-x-hidden mt-5 bg-white">
-            {/* Section 1: Founder Intro */}
-            <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-16 bg-gradient-to-r from-blue-50 to-white">
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                    className="md:w-1/2 space-y-4 text-gray-700"
-                >
-                    {[
-                        "Hi, I am Heena Gupta Founder & CEO of Rhombus Education and Immigration Services",
-                        "Over 15 years of experience in the education and immigration field. Trusted certifications from the British Council and ICEF.",
-                        "Welcome to Rhombus Education and Immigration Services, where we guide you toward achieving your academic and professional dreams abroad. Our mission is to empower individuals with personalized education and immigration solutions.",
-                        "At Rhombus, we believe in a holistic approach to education and career planning. Whether you're aspiring to study at a prestigious university or seeking immigration opportunities, our expert team is dedicated to provide clear guidance and unwavering support throughout your journey.",
-                        "With a focus on transparency, trust, and tailored services, we have helped countless students and professionals navigate complex processes with ease.",
-                        "A team of dedicated professionals committed to your success. Comprehensive, end-to-end support for students and education agents alike."
-                    ].map((text, idx) => <p key={idx}>{text}</p>)}
-                    <p className="font-semibold text-blue-700">
-                        Let us help you take the next step in your academic and professional journey. Contact us today to get started with us!
-                    </p>
-                </motion.div>
+      {/* Section 1: Who We Are */}
+      <section className="bg-[rgb(242,245,241)] px-6 md:px-16 py-20">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="font-forum text-[36px] text-black mb-6 text-left"
+        >
+          Who We Are
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="font-dm-sans text-[16px] leading-[24px] text-[rgba(0,0,0,0.75)] max-w-4xl text-left"
+        >
+          With years of experience and a results-focused approach, we empower
+          businesses to navigate complexity and achieve their goals.
+        </motion.p>
+      </section>
 
-                <motion.div
-                    ref={sectionRef}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={controls}
-                    className="md:w-1/2 mt-10 md:mt-0 flex justify-center"
-                >
-                    <motion.img
-                        src={founder}
-                        alt="Founder"
-                        className="w-80 h-80 object-cover rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300"
-                        whileHover={{ scale: 1.05 }}
-                    />
-                </motion.div>
-            </section>
+      {/* Section 2: Our Founder */}
+      <section className="bg-gradient-to-r from-cyan-50 via-white to-white px-6 md:px-16 py-20 flex flex-col md:flex-row items-center gap-30">
+        {/* Left Image */}
+        <motion.div
+          className="relative md:w-1/2 w-full flex justify-center"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <img
+            src={founder}
+            alt="Founder"
+            className="w-96 md:w-[30rem] h-[38rem] object-cover rounded-lg shadow-xl"
+          />
+          <div
+            className="absolute"
+            style={{
+              bottom: "-10%",
+              right: "-2%",
+              width: "40%",
+              height: "60%",
+              backgroundColor: "#c8f8a9",
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              borderRadius: "0.5rem",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+            }}
+          >
+            <div className="space-y-2">
+              <p className="font-forum text-[18px] text-black">Why Hire Execor?</p>
+              <p className="font-dm-sans text-[16px] text-black">15+ Years of Experience</p>
+              <p className="font-dm-sans text-[16px] text-black">Top-Rated Consultancy</p>
+              <p className="font-dm-sans text-[16px] text-black">Certified Professionals</p>
+            </div>
+            <button
+              className="mt-2 bg-white text-[rgba(0,0,0,0.75)] font-dm-sans px-4 py-2 rounded-md hover:bg-gray-100 transition w-full"
+              style={{ height: "46px", lineHeight: "24px" }}
+            >
+              Free Consultation →
+            </button>
+          </div>
+        </motion.div>
 
-            {/* Section 2: Our Mission */}
-            <section className="bg-blue-50 px-6 md:px-16 py-20 text-gray-700 text-center">
-                <MotionSection>
-                    <h2 className="text-3xl font-bold text-blue-800 mb-6">Our Mission</h2>
-                </MotionSection>
-                {[
-                    "Our mission is simple: to guide students toward a brighter future by making studying abroad an achievable and exciting opportunity. We understand the significance of studying internationally and the impact it has on personal and professional growth. With a focus on personalized care and expert consultancy, we ensure every student has a smooth, efficient, and successful journey—from choosing the right university to obtaining a student visa.",
-                    "We also offer comprehensive support to education agents, helping them manage their student clients' applications and visa processes with ease, precision, and trust."
-                ].map((text, idx) => <MotionSection key={idx}><p className="mt-6 max-w-4xl mx-auto text-lg leading-relaxed">{text}</p></MotionSection>)}
-            </section>
+        {/* Right Text */}
+        <motion.div
+          className="md:w-1/2 w-full space-y-4 font-dm-sans text-[16px] leading-[24px] text-[rgba(0,0,0,0.75)] text-left"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <h2 className="font-forum text-[36px] text-black mb-4">Meet Our Founder</h2>
+          <p>
+            Hi, I am Heena Gupta, Founder & CEO of Rhombus Education & Immigration Services.
+          </p>
+          <p>
+            With over 15 years of experience in the education and immigration field, we have guided hundreds of students worldwide.
+          </p>
+          <p>
+            Our mission is to empower students with personalized education and immigration solutions, ensuring transparency, trust, and success.
+          </p>
+          <p>
+            We combine expertise, certifications from the British Council & ICEF, and a dedicated team to make your study abroad journey seamless and successful.
+          </p>
+          <p>
+            Let us help you take the next step in your academic and professional journey. Contact us today!
+          </p>
 
-            {/* Section 3: Our Team */}
-            <section className="px-6 md:px-16 py-20 bg-white text-center">
-                <MotionSection><h2 className="text-3xl font-bold text-blue-800 mb-6">Our Team</h2></MotionSection>
-                <MotionSection><p className="mx-auto text-gray-600 max-w-2xl mb-10">Our team consists of experienced education consultants, visa specialists, and support staff, all dedicated to providing exceptional service...</p></MotionSection>
-                <motion.div className="overflow-x-auto flex space-x-8 py-6 scrollbar-hide">
-                    {teamMembers.map((member, idx) => (
-                        <motion.div key={idx} whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}
-                            className="min-w-[240px] bg-blue-50 rounded-2xl shadow-lg p-5 text-center hover:bg-blue-100 transition"
-                        >
-                            <img src={member.image} alt={member.name} className="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-md"/>
-                            <h4 className="text-lg font-semibold text-blue-800">{member.name}</h4>
-                            <p className="text-gray-600">{member.title}</p>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </section>
+          {/* ✅ Black Tick List */}
+          <ul className="space-y-2 mt-4">
+            {tickItems.map((item, idx) => (
+              <li key={idx} className="flex items-start gap-2">
+                <CheckCircle className="text-black w-5 h-5 mt-1" /> {/* black tick */}
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </section>
 
-            {/* Section 4: Why Choose Us */}
-            <section className="bg-gradient-to-r from-blue-800 to-blue-700 text-white px-6 md:px-16 py-20 text-center">
-                <MotionSection><h2 className="text-3xl font-bold mb-8">Why Choose Us?</h2></MotionSection>
-                <MotionSection>
-                    <ul className="max-w-3xl mx-auto text-lg space-y-4">
-                        {[
-                            "Over 15 years of expertise in the education and immigration field.",
-                            "Personalized, one-on-one consultation for every student.",
-                            "Trusted partner of the British Council.",
-                            "Seamless support from university application to visa approval."
-                        ].map((item, idx) => <li key={idx}>✔️ {item}</li>)}
-                    </ul>
-                </MotionSection>
-                <MotionSection>
-                    <p className="mt-10 font-semibold text-lg">
-                        Let us help you open doors to global education opportunities. <br />
-                        <span className="text-yellow-300">Contact us today to start your journey abroad!</span>
-                    </p>
-                </MotionSection>
-            </section>
+      {/* Section 3: Our Mission */}
+      <section className="bg-white px-6 md:px-16 py-20 space-y-5">
+        <motion.div
+          className="inline-block px-3 py-2 rounded-md"
+          style={{
+            backgroundColor: "rgb(242, 245, 241)",
+            color: "rgba(0, 0, 0, 0.75)",
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "16px",
+            lineHeight: "24px",
+            borderRadius: "4px",
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Our Mission
+        </motion.div>
+
+        <motion.div
+          className="flex flex-col md:flex-row items-start"
+          style={{ gap: "20%" }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <div className="md:w-[30%] w-full">
+            <h2 className="font-forum text-[30px] text-black leading-[40px]">
+              Empowering Clients to Create Lasting Value
+            </h2>
+          </div>
+          <div className="md:w-[50%] w-full">
+            <p className="font-dm-sans text-[16px] leading-[24px] text-[rgba(0,0,0,0.75)]">
+              Our mission is simple: to guide students toward a brighter future by making studying abroad
+              an achievable and exciting opportunity. With a focus on personalized care and expert consultancy,
+              we ensure every student has a smooth, efficient, and successful journey—from choosing the right
+              university to obtaining a student visa.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Section 4: Our Team */}
+      <section className="bg-white px-10 md:px-16 py-20">
+        <motion.div
+          className="inline-block px-3 py-2 rounded-md"
+          style={{
+            backgroundColor: "rgb(242, 245, 241)",
+            color: "rgba(0, 0, 0, 0.75)",
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "16px",
+            lineHeight: "24px",
+            borderRadius: "4px",
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Our Team
+        </motion.div>
+
+        <motion.p
+          className="font-dm-sans text-[16px] leading-[24px] text-[rgba(0,0,0,0.75)] max-w-3xl mb-10 text-left"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          Our team consists of experienced education consultants, visa specialists,
+          and support staff, all dedicated to providing exceptional service.
+        </motion.p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Extra Box Card */}
+          <motion.div
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-full h-64 md:h-72 bg-[rgb(200,248,169)] text-black flex flex-col justify-center items-center p-6 shadow-lg rounded-lg">
+              <p className="font-dm-sans text-[16px] text-center mb-4">
+                Why Hire Execor?
+              </p>
+              <ul className="font-dm-sans text-[16px] text-center mb-4 space-y-1">
+                <li>15+ Years of Experience</li>
+                <li>Top-Rated Consultancy</li>
+                <li>Certified Professionals</li>
+              </ul>
+              <button className="bg-white text-[rgba(0,0,0,0.75)] px-4 py-2 rounded-md hover:bg-gray-100 transition">
+                Free Consultation →
+              </button>
+            </div>
+          </motion.div>
+
+          {/* Team Cards */}
+          {teamMembers.map((member, idx) => (
+            <motion.div
+              key={idx}
+              className="flex flex-col items-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: idx * 0.2 }}
+            >
+              <div className="w-full h-64 md:h-72 bg-[rgb(200,248,169)] shadow-lg overflow-hidden rounded-lg">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="text-left mt-4 w-full">
+                <h4 className="font-forum text-[20px] text-black">{member.name}</h4>
+                <p className="font-dm-sans text-[16px] text-[rgba(0,0,0,0.75)]">
+                  {member.title}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-    );
+      </section>
+
+    </div>
+  );
 };
 
 export default About;

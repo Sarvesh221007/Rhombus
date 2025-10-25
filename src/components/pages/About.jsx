@@ -23,7 +23,7 @@ const About = () => {
     <div className="font-sans overflow-x-hidden text-[rgba(0,0,0,0.75)]">
 
       {/* Section 1: Who We Are */}
-      <section className="bg-[rgb(242,245,241)] px-6 md:px-16 py-20">
+      <section className="bg-[rgb(242,245,241)] px-6 md:px-16 py-5">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -22,7 +22,7 @@ const VisionSection = () => {
     ];
 
     return (
-        <section className="bg-white px-6 md:px-16 py-20 pt-35 text-[rgba(0,0,0,0.75)] font-dm-sans">
+        <section className="bg-white px-6 md:px-16 py-20 pt-50 text-[rgba(0,0,0,0.75)] font-dm-sans">
             {/* ----------- Tag + Divider ----------- */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

@@ -65,7 +65,7 @@ const GetInTouch = () => {
 
                 {/* Heading */}
                 <h2
-                    className="text-3xl md:text-5xl font-semibold mt-4 text-[#0E3530]"
+                    className="text-3xl md:text-4xl font-semibold mt-4 text-[#0E3530]"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
                 >
                     Change Starts With a Conversation

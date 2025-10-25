@@ -6,6 +6,7 @@ import AboutSection from "../Home/AboutRhombus";
 import ServicesSection from "../Home/ServicesSection";
 import FullWidthHero from "../Home/FullWidthHero";
 import VisionSection from "../Home/VisionSection";
+import ClientsSection from "../Home/ClientsSection";
 import GetInTouch from "../Home/GetInTouch";
 import InsightsSuccess from "../Home/InsightsSuccess";
 import CEOInsights from "../Home/CEOInsights";
@@ -28,6 +29,7 @@ const Home = () => {
       <ServicesSection />
       <FullWidthHero />
       <VisionSection />
+      <ClientsSection />
       <GetInTouch />
       <CEOInsights />
       <InsightsSuccess />

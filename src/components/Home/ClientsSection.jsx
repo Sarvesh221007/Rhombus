@@ -72,7 +72,7 @@ const ClientsSection = () => {
                 </p>
             </motion.div>
 
-            {/* ---------- IMAGE + SINGLE BOX CARD ---------- */}
+            {/* ---------- IMAGE + SINGLE BOX WITH POINTS ---------- */}
             <div className="flex flex-col md:flex-row items-start gap-12 md:gap-20 w-full">
                 {/* LEFT IMAGE */}
                 <div className="md:w-1/2 w-full sticky top-[120px] self-start overflow-hidden">
@@ -82,31 +82,22 @@ const ClientsSection = () => {
                         transition={{ duration: 1 }}
                         src={clientImage}
                         alt="Clients"
-                        className="rounded-2xl shadow-2xl object-cover w-full h-[420px] sm:h-[520px] md:h-[600px]"
+                        className="rounded-2xl shadow-2xl object-cover w-full h-[420px] sm:h-[520px] md:h-[650px]"
                     />
                 </div>
 
-                {/* RIGHT SINGLE BOX CARD */}
-                <motion.div
-                    className="md:w-1/2 w-full bg-[rgb(200,248,169)] rounded-2xl shadow-xl p-8 flex flex-col gap-6"
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 1 }}
-                >
+                {/* RIGHT SINGLE BOX */}
+                <div className="md:w-1/2 w-full border rounded-2xl overflow-hidden shadow-xl">
                     {boxData.map((box, index) => (
-                        <div key={index} className="flex flex-col gap-2">
-                            <h3 className="font-forum text-xl text-black">{box.title}</h3>
-                            <p className="font-dm-sans text-[16px] text-[rgba(0,0,0,0.75)]">
-                                {box.text}
-                            </p>
+                        <div
+                            key={index}
+                            className={`p-6 ${index % 2 === 0 ? "bg-white" : "bg-[rgb(242,245,241)]"}`}
+                        >
+                            <h3 className="text-xl font-semibold mb-2">{box.title}</h3>
+                            <p className="text-base">{box.text}</p>
                         </div>
                     ))}
-
-                    {/* Optional Button */}
-                    <button className="mt-4 bg-white text-[rgba(0,0,0,0.75)] font-dm-sans px-4 py-2 rounded-md hover:bg-gray-100 transition w-full">
-                        Learn More →
-                    </button>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

@@ -52,7 +52,7 @@ const VisionSection = () => {
 
             {/* ----------- Main Heading ----------- */}
             <motion.h2
-                className="text-5xl text-[#0E3530] leading-snug text-left max-w-5xl"
+                className="text-4xl text-[#0E3530] leading-snug text-left max-w-3xl"
                 style={{ fontFamily: "Forum, sans-serif" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

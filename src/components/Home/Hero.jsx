@@ -6,19 +6,21 @@ import handImage from "/hand.jpg";
 const HeroSection = () => {
     return (
         <section
-            className="relative flex flex-col-reverse md:flex-row items-center justify-between px-4 sm:px-10 pt-[150px] sm:pt-[160px] pb-12 md:pb-0 min-h-[auto] md:min-h-[99vh]"
-            style={{
-                backgroundColor: "#0E3530",
-                backgroundImage: `repeating-linear-gradient(
+  className="relative flex flex-col-reverse lg:flex-row items-center justify-between 
+  px-4 sm:px-10 lg:px-20 pt-24 sm:pt-28 lg:pt-32 pb-12 min-h-[90vh] 
+  w-full max-w-[1600px] mx-auto"
+  style={{
+    backgroundColor: "#0E3530",
+    backgroundImage: `repeating-linear-gradient(
       90deg,
       rgba(255,255,255,0.05),
       rgba(255,255,255,0.05) 6px,
       rgba(255,255,255,0.0) 30px
     )`,
-            }}
-        >
-
-
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-end gap-10 w-full relative">
 
                 {/* LEFT TEXT */}

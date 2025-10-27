@@ -1,164 +1,178 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronRight, ChevronDown, Plus, Minus } from "lucide-react";
 import logo from "/logo.svg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState(null);
-  const [lastScroll, setLastScroll] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
-  // Close sidebar when clicking outside
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (!e.target.closest(".sidebar") && !e.target.closest(".menu-btn")) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, []);
+  // ✅ Detect if current route is Home
+  const isHomePage = location.pathname === "/";
 
-  // Disable body scroll when sidebar is open
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "auto";
-  }, [isOpen]);
+    let ticking = false;
 
-  // Hide Navbar on scroll down
-  useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-      if (currentScroll > lastScroll && currentScroll > 100) setHidden(true);
-      else setHidden(false);
-      setLastScroll(currentScroll);
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (currentScroll > lastScrollY && currentScroll > 140) {
+            setHidden(true);
+          } else {
+            setHidden(false);
+          }
+
+          setIsScrolled(currentScroll > 10);
+          setLastScrollY(currentScroll);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScroll]);
+  }, [lastScrollY]);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "FAQ", path: "/faq" },
-    { name: "Contact", path: "/contact" },
-  ];
+  // ✅ Background and text color logic
+  const backgroundColor = isHomePage
+    ? isScrolled
+      ? "#0F3D3A"
+      : "transparent"
+    : "#ffffff";
 
-  const navLink =
-    "flex justify-between items-center w-full text-left text-gray-800 hover:text-teal-500 font-medium py-3 px-4 transition-all duration-300";
+  const textColor = isHomePage
+    ? isScrolled
+      ? "text-[rgb(200,248,169)]"
+      : "text-white"
+    : "text-[#0F3D3A]";
+
+  const borderBottom = isHomePage
+    ? isScrolled
+      ? "0.5px solid rgb(200,248,169)"
+      : "0.5px solid rgba(200,248,169,0.4)"
+    : "1px solid rgba(0,0,0,0.1)";
 
   return (
-    <div>
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 shadow-md ${
-          hidden ? "-translate-y-full" : "translate-y-0"
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transform transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.8,0.25,1)] ${hidden ? "-translate-y-full" : "translate-y-0"
         }`}
-        style={{ backgroundColor: "white" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
+      style={{
+        backgroundColor,
+        borderBottom,
+        boxShadow:
+          isScrolled || !isHomePage
+            ? "0 4px 14px rgba(0,0,0,0.08)"
+            : "none",
+        transition:
+          "transform 1.2s ease, background 0.5s ease, border 0.5s ease, box-shadow 0.5s ease",
+      }}
+    >
+      <nav className="relative flex items-center justify-between px-6 md:px-12 py-3 min-h-[70px]">
+        {/* Logo */}
+        <div className="flex items-center gap-3 z-10">
+          <Link to="/">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-12 w-auto md:h-14 transition-all duration-300"
+            />
           </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`relative px-3 py-2 text-gray-800 hover:text-teal-500 font-medium transition-all duration-300 ${
-                  location.pathname === link.path
-                    ? "text-teal-500 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-teal-500"
-                    : ""
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile Toggle */}
-          <button
-            className="menu-btn md:hidden p-2 text-gray-800 hover:text-teal-500"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsOpen(!isOpen);
-            }}
-          >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
         </div>
 
-        {/* Sidebar */}
-        <div
-          className={`sidebar fixed top-0 right-0 h-screen shadow-2xl transform transition-all duration-700 ease-in-out z-50 w-[70%] sm:w-[35%] ${
-            isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-          }`}
-          style={{ backgroundColor: "white" }}
+        <ul
+          className={`hidden md:flex items-center space-x-8 font-medium transition-colors duration-500 ${textColor}`}
+          style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
-          {/* Sidebar Header */}
-          <div className="flex items-center justify-center p-5 shadow-md">
-            <img src={logo} alt="Logo" className="h-12 w-auto" />
-          </div>
-
-          {/* Sidebar Links */}
-          <div className="flex flex-col items-center py-4 space-y-2">
-            {navLinks.map((link) => (
-              <div key={link.name} className="w-[85%]">
-                <button
-                  className={`${navLink} rounded-md`}
-                  onClick={() =>
-                    setOpenMenu(openMenu === link.name ? null : link.name)
-                  }
+          {["Home", "About", "Services", "FAQ", "Contact"].map((item) => (
+            <li key={item} className="relative group">
+              <Link
+                to={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                className="relative group cursor-pointer transition-all duration-300"
+              >
+                <span
+                  className="
+            relative pb-1 
+            after:content-[''] after:absolute after:left-0 after:-bottom-[2px]
+            after:w-0 after:h-[2px] after:bg-[rgb(200,248,169)]
+            after:transition-all after:duration-300 group-hover:after:w-full
+          "
                 >
-                  <span className="flex items-center gap-2">
-                    {openMenu === link.name ? (
-                      <ChevronDown size={18} />
-                    ) : (
-                      <ChevronRight size={18} />
-                    )}
-                    {link.name}
-                  </span>
-                  {openMenu === link.name ? <Minus size={16} /> : <Plus size={16} />}
-                </button>
+                  {item}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-                <div
-                  className={`transition-all duration-300 overflow-hidden ${
-                    openMenu === link.name
-                      ? "max-h-40 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="bg-gray-100 px-6 py-3 text-gray-800 rounded-lg mt-1 shadow-sm">
-                    Quick info about {link.name}.
-                    <div className="mt-2">
-                      <Link
-                        to={link.path}
-                        onClick={() => setIsOpen(false)}
-                        className="text-teal-500 font-medium underline"
-                      >
-                        Visit {link.name}
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[80%] mx-auto border-b border-gray-300 my-2"></div>
-              </div>
-            ))}
-          </div>
+
+        {/* Contact Button (Desktop) */}
+        <div className="hidden md:flex z-10">
+          <Link to="/contact">
+            <button
+              className={`flex items-center gap-2 px-5 py-2 rounded-md font-medium transition-all duration-300 ${isHomePage
+                  ? "bg-[rgb(200,248,169)] text-[#0F3D3A] hover:bg-[#A8E6A3]"
+                  : "bg-[#0F3D3A] text-[rgb(200,248,169)] hover:bg-[#0E3530]"
+                }`}
+            >
+              Contact <ArrowRight className="w-4 h-4" />
+            </button>
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="md:hidden z-10">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`transition-all ${textColor}`}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </nav>
 
-      {/* Overlay */}
-      <div
-        className={`fixed inset-0 bg-gray-800/10 backdrop-blur-[1px] z-40 transition-opacity duration-700 ease-in-out ${
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
-        onClick={() => setIsOpen(false)}
-      ></div>
-    </div>
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div
+          className={`md:hidden transition-all duration-300 ${isHomePage
+              ? "bg-[#0F3D3A] text-[rgb(200,248,169)]"
+              : "bg-white text-[#0F3D3A]"
+            } border-t border-[rgb(200,248,169)]/40`}
+        >
+          <ul className="flex flex-col items-center py-4 space-y-4 font-medium">
+            {["Home", "About", "Services", "FAQ", "Contact"].map((item) => (
+              <li key={item} onClick={() => setIsOpen(false)}>
+                <Link
+                  to={`/${item === "Home" ? "" : item.toLowerCase()}`}
+                  className="hover:text-[rgb(200,248,169)]/70 cursor-pointer"
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Contact Button (Mobile) */}
+          <div className="flex justify-center pb-4">
+            <Link to="/contact">
+              <button
+                className={`flex items-center gap-2 px-6 py-2 rounded-md font-medium transition-all duration-300 ${isHomePage
+                    ? "bg-[rgb(200,248,169)] text-[#0F3D3A] hover:bg-[#A8E6A3]"
+                    : "bg-[#0F3D3A] text-[rgb(200,248,169)] hover:bg-[#0E3530]"
+                  }`}
+              >
+                Contact <ArrowRight className="w-4 h-4" />
+              </button>
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 

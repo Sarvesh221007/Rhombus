@@ -9,6 +9,7 @@ import Contact from "./components/pages/Contact";
 import Cursor from "./components/ui/Cursor";
 import Breadcrumb from "./components/layout/Breadcrumb";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import SubscribeSection from "./components/layout/SubscribeSection";
 
 function Layout() {
   const location = useLocation();
@@ -32,7 +33,7 @@ function Layout() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-
+      <SubscribeSection />
       <Footer />
     </div>
   );

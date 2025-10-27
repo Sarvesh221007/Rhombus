@@ -44,7 +44,7 @@ const servicesData = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-28 px-6 sm:px-10 md:px-20">
+    <section className="relative overflow-hidden mt-20 bg-gray-50 py-28 px-6 sm:px-10 md:px-20">
       {/* Section Tag */}
       <motion.div
         className="inline-block px-3 py-1 mb-6"

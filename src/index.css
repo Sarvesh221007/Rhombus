@@ -4,8 +4,11 @@
   font-family: 'DM Sans', sans-serif;
 }
 
-
 @import "tailwindcss";
+
+/* ---------------------- */
+/* Animations & Keyframes */
+/* ---------------------- */
 
 @keyframes fadeIn {
   from {
@@ -22,38 +25,72 @@
   animation: fadeIn 1s ease-in-out;
 }
 
+@media (max-aspect-ratio: 1/2) {
+  section.custom-hero {
+    flex-direction: column;
+    background-color: #123;
+  }
+}
 
-/* Optional — smooth fade-in animation for sidebar content */
+@keyframes lineGrow {
+  0% {
+    width: 10%;
+    opacity: 0.2;
+  }
+  50% {
+    width: 50%;
+    opacity: 0.6;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-lineGrow {
+  animation: lineGrow 2s ease-in-out infinite alternate;
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 1s ease forwards;
+}
+
+/* Sidebar fade-in */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 .animate-fadeIn {
   animation: fadeIn 0.4s ease forwards;
 }
 
-/* src/index.css or tailwind.css */
+/* ✨ Keep only black circle hover effects if any component uses it directly */
+/* (Removed the custom cursor global effect completely) */
 
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  background: rgba(0, 0, 0, 0.7); /* ✅ visible on light background */
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: width 0.25s ease, height 0.25s ease, background 0.25s ease,
-              transform 0.15s cubic-bezier(0.22, 1, 0.36, 1);
-  z-index: 99999;
+/* Final smooth fade-in for sections */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.custom-cursor.hover {
-  width: 40px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.85); /* black-ish for visibility */
-  transform: translate(-50%, -50%) scale(1.1);
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px inset rgba(255, 255, 255, 0.2);
+.animate-fadeIn {
+  animation: fadeIn 0.75s ease both;
 }

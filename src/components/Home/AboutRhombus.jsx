@@ -12,7 +12,7 @@ const tickItems = [
 
 const AboutSection = () => {
   return (
-    <section className="bg-gradient-to-r from-cyan-50 via-white to-white px-6 md:px-16 py-20 flex flex-col md:flex-row items-start gap-10">
+    <section className="bg-gradient-to-r from-cyan-50 mt-10 via-white to-white px-6 md:px-16 py-20 flex flex-col md:flex-row items-start gap-25">
       {/* Left Image + Info Box */}
       <motion.div
         className="relative md:w-1/2 w-full flex justify-center"

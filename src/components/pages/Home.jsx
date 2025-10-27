@@ -10,6 +10,7 @@ import ClientsSection from "../Home/ClientsSection";
 import GetInTouch from "../Home/GetInTouch";
 import InsightsSuccess from "../Home/InsightsSuccess";
 import CEOInsights from "../Home/CEOInsights";
+import WhatSetsUsApart from "../Home/WhatSetsUsApart";
 
 const Home = () => {
   const imageRef = useRef(null);
@@ -25,7 +26,8 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden relative">
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
+      <WhatSetsUsApart />
       <ServicesSection />
       <FullWidthHero />
       <VisionSection />
@@ -40,5 +42,5 @@ const Home = () => {
 export default Home;
 
 // hover:bg-[rgb(200,248,169)]//light-green
-// text-[#0E3530]//dark-green
+// text-rgb(15, 61, 58)//dark-green
 // bg-[rgb(244,245,241)]// text-white

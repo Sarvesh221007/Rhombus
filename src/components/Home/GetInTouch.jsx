@@ -49,7 +49,6 @@ const GetInTouch = () => {
                 transition={{ duration: 1 }}
                 className="text-left w-full md:w-[90%]"
             >
-                {/* Tag */}
                 <div
                     className="inline-block px-3 py-1"
                     style={{
@@ -63,7 +62,6 @@ const GetInTouch = () => {
                     Get in Touch
                 </div>
 
-                {/* Heading */}
                 <h2
                     className="text-3xl md:text-4xl font-semibold mt-4 text-[#0E3530]"
                     style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -73,30 +71,82 @@ const GetInTouch = () => {
             </motion.div>
 
             {/* Main Content */}
-            <div className="relative w-[90%] mt-12 flex flex-col md:flex-row items-center justify-between">
+            <div className="relative w-[96%] mt-12 flex flex-col md:flex-row items-center justify-between">
                 {/* Background image */}
                 <div
-                    className="relative w-full md:w-[90%] h-[520px] bg-cover bg-center rounded-2xl shadow-lg"
+                    className="relative w-full md:w-[98%] h-[550px] bg-cover bg-center rounded-2xl shadow-lg"
                     style={{
-                        backgroundImage: `url(${bg2})`,
+                        backgroundImage: `url("https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-1250030317_edit.jpg")`,
                     }}
                 >
+                    {/* Left Bottom Info Box */}
+<motion.div
+    className="absolute -bottom-30 left-6 flex flex-col w-[417px] rounded-[8px] overflow-hidden shadow-2xl border border-transparent"
+    style={{
+        boxSizing: "border-box",
+        transition:
+            "background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease, transform 0.4s ease",
+    }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 1 }}
+>
+    {/* Top Section — Heading + Paragraph with teal bg */}
+    <div
+        className="flex flex-col justify-center items-center text-center p-6"
+        style={{
+            backgroundColor: "rgba(15, 61, 58, 0.8)",
+            color: "white",
+        }}
+    >
+        <h3 className="text-xl font-semibold mb-3 drop-shadow-lg">
+            Have a Challenge or an Idea?
+        </h3>
+
+        <p className="text-[rgba(255,255,255,0.85)] leading-relaxed">
+            Fill out the form, and let’s talk about how we can support your business
+            with tailored solutions.
+        </p>
+    </div>
+
+    {/* Bottom Section — Contact Info with white bg */}
+    <div
+        className="flex flex-col gap-3 justify-center items-center text-center py-6 px-4"
+        style={{
+            backgroundColor: "rgb(242, 245, 241)", // solid white-ish background
+        }}
+    >
+        {/* Call */}
+        <div className="flex items-center justify-center gap-3 text-[rgba(0,0,0,0.75)]">
+            <Phone className="w-5 h-5 text-[rgba(0,0,0,0.75)]" />
+            <span>1-800-356-8933</span>
+        </div>
+
+        {/* Location */}
+        <div className="flex items-start justify-center gap-3 text-[rgba(0,0,0,0.75)] max-w-[300px]">
+            <MapPin className="w-5 h-5 mt-1 text-[rgba(0,0,0,0.75)]" />
+            <span>Seventh Ave, 20th Floor, New York, NY 10018</span>
+        </div>
+    </div>
+</motion.div>
+
+
                 </div>
-                {/* Contact Form (floating right, overlapping image) */}
+
+                {/* Contact Form (right side overlapping image) */}
                 <motion.div
-                    className="w-full md:w-[40%] bg-white border border-gray-200 rounded-2xl shadow-2xl p-8 md:p-10 z-10 md:absolute md:top-1/2 md:right-0 md:-translate-y-1/2"
+                    className="w-full md:w-[45%] bg-white border border-gray-200 rounded-2xl shadow-2xl p-8  pr-5 md:p-10 z-10 md:absolute mr-30 md:top-1/2 md:right-0 md:-translate-y-1/2"
                     initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
                 >
                     <form onSubmit={handleSubmit} className="space-y-6 font-dm-sans">
-                        {/* Form Header */}
                         <h3 className="text-2xl font-bold bg-[#0E3530] text-white px-4 py-3 rounded-md flex justify-between items-center">
                             Contact Form <Send className="w-5 h-5 text-white" />
                         </h3>
 
-                        {/* Name Fields */}
                         <div className="flex flex-col md:flex-row gap-4">
                             <div className="flex flex-col w-full md:w-1/2">
                                 <label className="text-sm font-medium mb-1">First Name</label>
@@ -122,7 +172,6 @@ const GetInTouch = () => {
                             </div>
                         </div>
 
-                        {/* Email */}
                         <div className="flex flex-col">
                             <label className="text-sm font-medium mb-1">Email</label>
                             <input
@@ -135,7 +184,6 @@ const GetInTouch = () => {
                             />
                         </div>
 
-                        {/* Phone */}
                         <div className="flex flex-col">
                             <label className="text-sm font-medium mb-1">Phone</label>
                             <input
@@ -148,7 +196,6 @@ const GetInTouch = () => {
                             />
                         </div>
 
-                        {/* Message */}
                         <div className="flex flex-col">
                             <label className="text-sm font-medium mb-1">Message</label>
                             <textarea
@@ -162,7 +209,6 @@ const GetInTouch = () => {
                             />
                         </div>
 
-                        {/* Submit Button */}
                         <button
                             type="submit"
                             className="w-full bg-[rgb(200,248,169)] text-black font-semibold py-3 rounded-md flex items-center justify-between px-4 transition-all duration-300 hover:bg-[#0E3530] hover:text-white"
@@ -170,12 +216,10 @@ const GetInTouch = () => {
                             Submit <ArrowRight className="w-5 h-5" />
                         </button>
 
-                        {/* Divider */}
                         <div className="relative flex items-center justify-center my-4">
                             <span className="absolute w-2/3 border-t border-gray-300"></span>
                         </div>
 
-                        {/* Note */}
                         <p className="text-sm text-gray-500 text-center">
                             By submitting this form, you agree to our Privacy Policy. We may
                             contact you via email or phone for scheduling or marketing

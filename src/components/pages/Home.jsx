@@ -11,6 +11,8 @@ import GetInTouch from "../Home/GetInTouch";
 import InsightsSuccess from "../Home/InsightsSuccess";
 import CEOInsights from "../Home/CEOInsights";
 import WhatSetsUsApart from "../Home/WhatSetsUsApart";
+import RightSoulution from "../Home/RightSolution";
+import BrandLogos from "../Home/BrandLogos";
 
 const Home = () => {
   const imageRef = useRef(null);
@@ -31,8 +33,10 @@ const Home = () => {
       <ServicesSection />
       <FullWidthHero />
       <VisionSection />
+      <RightSoulution />
       <ClientsSection />
       <GetInTouch />
+      <BrandLogos />
       <CEOInsights />
       <InsightsSuccess />
     </div>
@@ -44,3 +48,5 @@ export default Home;
 // hover:bg-[rgb(200,248,169)]//light-green
 // text-rgb(15, 61, 58)//dark-green
 // bg-[rgb(244,245,241)]// text-white
+
+

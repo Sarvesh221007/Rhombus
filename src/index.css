@@ -94,3 +94,43 @@
 .animate-fadeIn {
   animation: fadeIn 0.75s ease both;
 }
+
+
+/* Parent Hero Section Container */
+.elementor-element-926da5a .e-con-inner {
+  display: flex;
+  flex-direction: row; /* Side by side */
+  align-items: center;
+  justify-content: space-between;
+  height: 450px;
+  position: relative;
+}
+
+/* Left Box (Text Section) */
+.elementor-element-7523951 {
+  flex: 1;
+  color: #fff;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Right Box (Image Section) */
+.elementor-element-066bb72 {
+  flex: 1;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-top-right-radius: 4px;
+
+}
+
+/* Optional: Overlay effect on background */
+.elementor-element-066bb72::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 61, 58, 0.3); /* soft overlay tint */
+  border-radius: 6px;
+}

@@ -60,7 +60,7 @@ const ClientsSection = () => {
         transition={{ duration: 1 }}
         className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-10 md:gap-12 mb-16 sm:mb-20"
       >
-        <h2 className="font-forum text-3xl sm:text-4xl md:text-5xl text-[#0E3530] w-full md:w-1/2 leading-tight">
+        <h2 className="font-['forum']  text-3xl sm:text-4xl md:text-5xl text-[#0E3530] w-full md:w-1/2 leading-tight">
           Empowering Global Connections
         </h2>
         <p className="text-[rgba(0,0,0,0.75)] text-base sm:text-lg leading-relaxed w-full md:w-1/2 font-dm-sans">

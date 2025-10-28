@@ -24,7 +24,7 @@ const SubscribeSection = () => {
         }}
       >
         {/* Headings */}
-        <div className="w-full max-w-[1100px] font-[Forum] transition-all duration-300">
+        <div className="w-full max-w-[1100px] font-[Forum]  transition-all mb-6 duration-300 font-normal">
           <h3
             className="
               text-[#0E3530] 
@@ -46,7 +46,7 @@ const SubscribeSection = () => {
         {/* Form Section */}
         <div
           className="
-            w-full max-w-[900px] mt-10 mb-5
+            w-full max-w-[900px] mb-10 lg:mb-0 sm:mb-16 md:mb-0
             flex flex-col lg:flex-row lg:items-center lg:justify-between
             gap-6 transition-all duration-300
             text-[15px] leading-[22.5px] text-[rgba(0,0,0,0.75)] font-[DM_Sans,sans-serif]

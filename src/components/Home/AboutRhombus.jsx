@@ -79,9 +79,9 @@ const AboutSection = () => {
 
 
   return (
-    <section className="w-full bg-white py-20 px-6 md:px-10">
+    <section className="w-full bg-white py-15 px-6 md:px-10">
       {/* ✅ Max-width Container */}
-      <div className="max-w-[1266px] mx-auto flex flex-col gap-16 font-dm-sans">
+      <div className="max-w-[1266px] mx-auto flex flex-col gap-4 font-dm-sans">
         {/* ✅ Section Tag */}
         <motion.div
           className="inline-block px-3 py-1 self-start"
@@ -94,7 +94,7 @@ const AboutSection = () => {
             borderRadius: "4px",
           }}
         >
-          Our Core Services
+          Our Client
         </motion.div>
 
         {/* ✅ First Row: Heading + Paragraph */}
@@ -111,14 +111,14 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-[#0E3530] text-4xl sm:text-5xl leading-snug font-['Forum'] mb-5"
+              className="text-[#0E3530] text-4xl sm:text-5xl leading-snug font-['Forum'] mb-10"
             >
-              Expert Advice, Built for You
+              Driving success through strategy.
             </motion.h2>
           </div>
 
           <div className="md:w-[45%] w-full">
-            <p className="text-[16px] leading-[26px] text-[rgba(0,0,0,0.75)]">
+            <p className="text-[16px] leading-[26px] text-[rgba(0,0,0,0.75)] pt-4">
               Our mission is simple: to guide students toward a brighter future by
               making studying abroad an achievable and exciting opportunity.
             </p>

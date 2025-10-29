@@ -31,9 +31,9 @@ const Home = () => {
       <main className="flex-grow">
         <HeroSection />
         <WhatSetsUsApart />
-        <AboutSection />
         <ServicesSection />
         <FullWidthHero />
+        <AboutSection />
         <VisionSection />
         <RightSoulution />
         <ClientsSection />

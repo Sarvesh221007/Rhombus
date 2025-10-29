@@ -41,7 +41,7 @@ const servicesData = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative overflow-hidde py-10 flex justify-center">
+    <section className="relative overflow-hidde py-16 flex justify-center">
       {/* ---------- Main Container ---------- */}
       <div className="max-w-[1266px] sm:w-[95vw] md:w-[97vw] px-4">
         {/* Section Tag */}

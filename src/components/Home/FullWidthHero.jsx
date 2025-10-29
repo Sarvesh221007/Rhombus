@@ -30,42 +30,42 @@ const FullWidthHero = () => {
         </motion.div>
 
         {/* ---------- RIGHT: Floating Box (Bottom, No Shadow) ---------- */}
-<motion.div
-  initial={{ opacity: 0, y: 80 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.8, ease: 'easeOut' }}
-  className="self-end mb-3 w-[300px] md:w-[360px] lg:w-[380px] rounded-lg overflow-hidden"
-  style={{
-    backdropFilter: 'saturate(1.8) blur(40px)',
-    backgroundColor: 'rgba(15,61,58,0.4)',
-    borderRadius: '6px',
-  }}
->
-  {/* Text content inside box */}
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8, delay: 0.2 }}
-    className="flex flex-col justify-center text-white py-8 px-6"
-  >
-    <span className="text-lg md:text-xl font-normal">Up to</span>
-    <span className="text-5xl md:text-6xl my-2 font-normal">40%</span>
-    <span className="text-base md:text-lg font-medium opacity-90">
-      of leaders’ time goes to strategy.
-    </span>
-  </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="self-end mb-3 w-[300px] md:w-[360px] lg:w-[380px] rounded-lg overflow-hidden"
+          style={{
+            backdropFilter: 'saturate(1.8) blur(40px)',
+            backgroundColor: 'rgba(15,61,58,0.4)',
+            borderRadius: '6px',
+          }}
+        >
+          {/* Text content inside box */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col justify-center text-white py-8 px-6"
+          >
+            <span className="text-md md:text-md font-normal">Up to</span>
+            <span className="text-5xl md:text-6xl my-2 font-normal">40%</span>
+            <span className="text-base md:text-md font-normal opacity-90">
+              of leaders’ time goes to strategy.
+            </span>
+          </motion.div>
 
-  {/* Button */}
-  <a
-    href="https://execor.vamtam.com/services/"
-    className="block text-center w-full py-4 bg-[rgb(200,248,169)] text-[#0E3530] font-semibold 
-      text-lg md:text-xl transition-all duration-300 hover:bg-[#0E3530] hover:text-[rgb(200,248,169)]"
-  >
-    Let us optimize it for you →
-  </a>
-</motion.div>
+          {/* Button */}
+          <a
+            href="https://execor.vamtam.com/services/"
+            className="block text-center w-full py-4 bg-[rgb(200,248,169)] text-[#0E3530] font-semibold 
+      text-sm md:text-sm transition-all duration-300 hover:bg-[#0E3530] hover:text-white"
+          >
+            Let us optimize it for you →
+          </a>
+        </motion.div>
 
       </div>
 

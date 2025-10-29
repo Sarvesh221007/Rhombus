@@ -6,7 +6,7 @@ const stories = [
     image: "/insights/img1.webp",
     title: "Maximizing Team Productivity",
     date: "Oct 12, 2025",
-    desc: "Learn how top leaders manage time and boost efficiency.",
+    desc: "Learn how top leaders manage time and boost efficiency.Learn how top leaders manage time and boost efficiency.",
     category: "Business",
     tag: "Leadership",
     link: "#",
@@ -15,7 +15,7 @@ const stories = [
     image: "/insights/img2.webp",
     title: "Successful Client Partnerships",
     date: "Sep 28, 2025",
-    desc: "Case studies on building long-lasting client relationships.",
+    desc: "Case studies on building long-lasting client relationships.Learn how top leaders manage time and boost efficiency.",
     category: "Strategy",
     tag: "Partnerships",
     link: "#",
@@ -24,7 +24,7 @@ const stories = [
     image: "/insights/img3.webp",
     title: "Digital Transformation Journey",
     date: "Aug 15, 2025",
-    desc: "How companies embrace technology to scale faster.",
+    desc: "How companies embrace technology to scale faster.Learn how top leaders manage time and boost efficiency.",
     category: "Technology",
     tag: "Innovation",
     link: "#",
@@ -33,7 +33,7 @@ const stories = [
     image: "/insights/img4.webp",
     title: "Leadership Insights",
     date: "Jul 10, 2025",
-    desc: "Key strategies for effective leadership in modern businesses.",
+    desc: "Key strategies for effective leadership in modern businesses.Learn how top leaders manage time and boost efficiency.",
     category: "Growth",
     tag: "Insights",
     link: "#",
@@ -42,7 +42,7 @@ const stories = [
 
 const InsightsSuccess = () => {
   return (
-    <section className="w-full bg-[#F9FAF8] py-20 px-4 font-['DM Sans'] text-[rgba(0,0,0,0.75)]">
+    <section className="w-full py-10 font-['DM Sans'] text-[rgba(0,0,0,0.75)]">
       {/* Fixed-width centered container */}
       <div className="max-w-[1266px] mx-auto flex flex-col items-center justify-center">
         {/* --- Tag --- */}
@@ -77,7 +77,7 @@ const InsightsSuccess = () => {
             Expert Strategies, Industry Trends & Real Results
           </h2>
 
-          <p className="text-[15px] md:text-[16px] text-[#0E3530] leading-[22.5px] md:w-[48%]">
+          <p className="text-[15px] pt-6 md:text-[14px] text-[#0E3530] leading-[22.5px] md:w-[48%] opacity-90">
             Stay ahead with the latest business insights, success stories, and
             industry trends. Explore expert advice, real-world case studies, and
             actionable strategies to drive growth and innovation in your
@@ -114,7 +114,7 @@ const InsightsSuccess = () => {
               </a>
 
               {/* --- Meta Info --- */}
-              <div className="w-full mt-3 flex flex-wrap justify-between items-center gap-3 text-sm">
+              <div className="w-full mt-3 flex flex-wrap justify-left items-center gap-3 text-sm">
                 <span
                   className="inline-block px-3 py-1 rounded"
                   style={{
@@ -140,10 +140,10 @@ const InsightsSuccess = () => {
 
               {/* --- Description (hover reveal) --- */}
               <p
-                className="w-full mt-2 opacity-0 translate-y-2 transition-all duration-300 ease-in-out
-                  group-hover:opacity-100 group-hover:translate-y-0"
+                className="w-full text-[11px] mt-2 opacity-0 translate-y-2 transition-all duration-300 ease-in-out
+                  group-hover:opacity-70 group-hover:translate-y-0"
                 style={{
-                  lineHeight: "22.5px",
+                  lineHeight: "17.5px",
                 }}
               >
                 {story.desc}

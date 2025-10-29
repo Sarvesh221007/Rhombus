@@ -56,9 +56,9 @@ const CEOInsights = () => {
   const prevSlide = () => setCurrent((prev) => (prev - 1 + ceos.length) % ceos.length);
 
   return (
-    <section className="flex flex-col items-center justify-center bg-white py-12">
+    <section className="flex flex-col items-center justify-center">
       {/* Big Box */}
-      <div className="w-[95%] lg:mt-20 md:w-[87%] bg-[rgb(244,245,241)] rounded-[5px] shadow-lg p-5 md:p-16 flex flex-col gap-12">
+      <div className="w-[95%] lg:mt-20 md:w-[92%] bg-[rgb(244,245,241)] rounded-[5px] shadow-lg p-5 md:p-16 flex flex-col gap-12">
         {/* CEO Card */}
         <motion.div
           key={current}

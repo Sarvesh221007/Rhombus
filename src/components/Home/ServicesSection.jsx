@@ -41,7 +41,7 @@ const servicesData = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gray-50 py-28 flex justify-center">
+    <section className="relative overflow-hidde py-10 flex justify-center">
       {/* ---------- Main Container ---------- */}
       <div className="max-w-[1266px] sm:w-[95vw] md:w-[97vw] px-4">
         {/* Section Tag */}
@@ -61,7 +61,7 @@ const ServicesSection = () => {
 
         {/* Heading + Paragraph */}
         <motion.div
-          className="flex flex-col md:flex-row mb-12 items-start gap-12 md:gap-[20%]"
+          className="flex flex-col md:flex-row mb-12 items-start"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -87,9 +87,6 @@ const ServicesSection = () => {
           </div>
         </motion.div>
 
-        {/* Separator Line */}
-        <div className="w-[100%] h-[1px] bg-[rgba(186,187,182,0.9)] mx-auto my-10"></div>
-
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-10">
           {servicesData.map((service, i) => (
@@ -97,8 +94,9 @@ const ServicesSection = () => {
               key={i}
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3 }}
-              className="relative flex flex-col justify-between min-h-[460px] rounded-2xl shadow-lg 
-                         border border-[rgb(244,245,241)] hover:border-[rgb(200,248,169)] overflow-hidden bg-white"
+              className="relative flex flex-col justify-between rounded-2xl shadow-lg 
+                 border border-[rgb(244,245,241)] hover:border-[rgb(200,248,169)] 
+                 overflow-hidden bg-white h-full"
             >
               {/* Top Image */}
               <div className="flex justify-center mt-6">
@@ -110,7 +108,7 @@ const ServicesSection = () => {
               </div>
 
               {/* Box Content */}
-              <div className="relative flex flex-col mt-6">
+              <div className="flex flex-col flex-grow mt-6">
                 <h3
                   className="text-2xl sm:text-3xl text-[#0E3530] mb-4 text-center px-4"
                   style={{
@@ -122,9 +120,13 @@ const ServicesSection = () => {
                   {service.title}
                 </h3>
 
-                {/* Points + Learn More background */}
-                <div className="p-6 flex flex-col gap-4 mt-auto rounded-b-2xl bg-[rgb(244,245,241)] hover:bg-[rgb(200,248,169)] transition-colors duration-300">
-                  <ul className="space-y-2 text-gray-800 text-base">
+                {/* Content Box with Equal Height and Consistent Padding */}
+                <div
+                  className={`p-6 flex flex-col justify-between flex-grow rounded-b-2xl 
+            bg-[rgb(244,245,241)] hover:bg-[rgb(200,248,169)] 
+            transition-colors duration-300 min-h-[260px]`}
+                >
+                  <ul className="space-y-2 text-gray-800 text-base flex-grow">
                     {service.points.map((p, j) => (
                       <li key={j} className="flex items-center gap-2">
                         <Check
@@ -139,17 +141,25 @@ const ServicesSection = () => {
                     ))}
                   </ul>
 
-                  <Link
-                    to="/services"
-                    className="mt-4 inline-block py-2.5 w-full text-center font-semibold rounded-lg bg-white text-[#0E3530] border border-gray-300 hover:bg-[#0E3530] hover:text-[rgb(200,248,169)] transition-all duration-300"
-                  >
-                    Learn More →
-                  </Link>
+                  {/* ✅ Bottom Padding Fixed */}
+                  <div className="mt-auto pt-4">
+                    <Link
+                      to="/services"
+                      className="inline-block py-2.5 w-full text-center font-semibold rounded-lg 
+                        bg-white text-[#0E3530] border border-gray-300 
+                        hover:bg-[#0E3530] hover:text-[rgb(200,248,169)] 
+                        transition-all duration-300"
+                    >
+                      Learn More →
+                    </Link>
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
+
+
       </div>
     </section>
   );

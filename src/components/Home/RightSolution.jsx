@@ -89,15 +89,15 @@ const RightSolution = () => {
             <div className="max-w-8xl mx-auto w-full box-border overflow-hidden rounded-md">
                 {/* Section Heading */}
                 <div
-                    className="relative flex flex-col items-center justify-center text-center text-white bg-cover bg-center"
+                    className="relative flex flex-col items-center justify-center text-center text-white bg-cover bg-center brightness-160"
                     style={{
                         backgroundColor: "rgb(15, 61, 58)",
                         backgroundImage:
                             "url('https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-2162471545.jpg')",
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        paddingTop: "110px",
-                        paddingBottom: "110px",
+                        paddingTop: "75px",
+                        paddingBottom: "75px",
                     }}
                 >
                     <div className="absolute inset-0 bg-black/40"></div>
@@ -106,9 +106,9 @@ const RightSolution = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="relative z-10 max-w-3xl px-6"
+                        className="relative z-10 max-w-4xl px-6"
                     >
-                        <h2 className="text-4xl md:text-5xl font-bold font-dmsans mb-4">
+                        <h2 className="text-4xl md:text-5xl font-normal font-['forum'] mb-4">
                             Find the Right Solution
                         </h2>
                     </motion.div>

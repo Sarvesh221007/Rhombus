@@ -13,6 +13,7 @@ import CEOInsights from "../Home/CEOInsights";
 import WhatSetsUsApart from "../Home/WhatSetsUsApart";
 import RightSoulution from "../Home/RightSolution";
 import BrandLogos from "../Home/BrandLogos";
+import Footer from "../layout/Footer"; // ✅ make sure this path is correct
 
 const Home = () => {
   const imageRef = useRef(null);
@@ -26,27 +27,31 @@ const Home = () => {
   }, [controls, inView]);
 
   return (
-    <div className="overflow-x-hidden relative">
-      <HeroSection />
-      {/* <AboutSection /> */}
-      <WhatSetsUsApart />
-      <ServicesSection />
-      <FullWidthHero />
-      <VisionSection />
-      <RightSoulution />
-      <ClientsSection />
-      <GetInTouch />
-      <BrandLogos />
-      <CEOInsights />
-      <InsightsSuccess />
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">
+        <HeroSection />
+        <WhatSetsUsApart />
+        <AboutSection />
+        <ServicesSection />
+        <FullWidthHero />
+        <VisionSection />
+        <RightSoulution />
+        <ClientsSection />
+        <GetInTouch />
+        <BrandLogos />
+        <CEOInsights />
+        <InsightsSuccess />
+      </main>
     </div>
   );
 };
 
 export default Home;
 
+
 // hover:bg-[rgb(200,248,169)]//light-green
 // text-rgb(15, 61, 58)//dark-green
 // bg-[rgb(244,245,241)]// text-white
+//
 
-
+// 0F3D3A add this color in bg gree dark

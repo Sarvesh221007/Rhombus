@@ -1,3 +1,4 @@
+// src/components/layout/Navbar.jsx
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -10,12 +11,11 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const location = useLocation();
 
-  // ✅ Detect if current route is Home
   const isHomePage = location.pathname === "/";
 
+  // ✅ Scroll-based hide/show & blur logic
   useEffect(() => {
     let ticking = false;
-
     const handleScroll = () => {
       const currentScroll = window.scrollY;
 
@@ -39,12 +39,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // ✅ Background and text color logic
+  // ✅ Dynamic styles
   const backgroundColor = isHomePage
     ? isScrolled
-      ? "#0F3D3A"
+      ? "rgba(15, 61, 58, 0.85)"
       : "transparent"
-    : "#ffffff";
+    : "rgba(255, 255, 255, 0.9)";
 
   const textColor = isHomePage
     ? isScrolled
@@ -54,8 +54,8 @@ const Navbar = () => {
 
   const borderBottom = isHomePage
     ? isScrolled
-      ? "0.5px solid rgb(200,248,169)"
-      : "0.5px solid rgba(200,248,169,0.4)"
+      ? "0.5px solid rgba(200,248,169,0.4)"
+      : "0.5px solid rgba(200,248,169,0.2)"
     : "1px solid rgba(0,0,0,0.1)";
 
   return (
@@ -69,24 +69,27 @@ const Navbar = () => {
           isScrolled || !isHomePage
             ? "0 4px 14px rgba(0,0,0,0.08)"
             : "none",
+        backdropFilter: isScrolled ? "blur(16px)" : "none",
+        WebkitBackdropFilter: isScrolled ? "blur(16px)" : "none",
         transition:
-          "transform 1.2s ease, background 0.5s ease, border 0.5s ease, box-shadow 0.5s ease",
+          "transform 1.2s ease, background 0.5s ease, border 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.6s ease",
       }}
     >
-      <nav className="relative flex items-center justify-between px-6 md:px-12 py-3 min-h-[70px]">
-        {/* Logo */}
-        <div className="flex items-center gap-3 z-10">
-          <Link to="/">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-12 w-auto md:h-14 transition-all duration-300"
-            />
-          </Link>
-        </div>
+      <nav
+        className={`flex items-center justify-between py-2 w-full max-w-[1280px] mx-auto transition-all duration-500`}
+      >
+        {/* === Logo === */}
+        <Link to="/" className="flex items-center gap-3 z-8">
+          <img
+            src={logo}
+            alt="Logo"
+            className="h-8 w-auto md:h-14 transition-all duration-300"
+          />
+        </Link>
 
+        {/* === Desktop Nav === */}
         <ul
-          className={`hidden md:flex items-center space-x-8 font-medium transition-colors duration-500 ${textColor}`}
+          className="hidden md:flex items-center space-x-8 font-normal text-white transition-colors duration-500 font-['DM Sans']"
           style={{ fontFamily: "'DM Sans', sans-serif" }}
         >
           {["Home", "About", "Services", "FAQ", "Contact"].map((item) => (
@@ -111,37 +114,37 @@ const Navbar = () => {
         </ul>
 
 
-        {/* Contact Button (Desktop) */}
+        {/* === Contact Button (Desktop) === */}
         <div className="hidden md:flex z-10">
           <Link to="/contact">
             <button
-              className={`flex items-center gap-2 px-5 py-2 rounded-md font-medium transition-all duration-300 ${isHomePage
-                  ? "bg-[rgb(200,248,169)] text-[#0F3D3A] hover:bg-[#A8E6A3]"
-                  : "bg-[#0F3D3A] text-[rgb(200,248,169)] hover:bg-[#0E3530]"
+              className={`flex items-center gap-2 px-5 py-2 rounded-md font-medium transition-all duration-300 cursor-pointer ${isHomePage
+                ? "bg-[rgb(200,248,169)] text-[#0F3D3A] hover:bg-[#0F3D3A] hover:text-white"
+                : "bg-[#0F3D3A] text-[rgb(200,248,169)] hover:bg-[#0F3D3A] hover:text-white"
                 }`}
             >
-              Contact <ArrowRight className="w-4 h-4" />
+              Contact Us <ArrowRight className="w-5 h-4" />
             </button>
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* === Mobile Toggle === */}
         <div className="md:hidden z-10">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`transition-all ${textColor}`}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* === Mobile Menu === */}
       {isOpen && (
         <div
           className={`md:hidden transition-all duration-300 ${isHomePage
-              ? "bg-[#0F3D3A] text-[rgb(200,248,169)]"
-              : "bg-white text-[#0F3D3A]"
+            ? "bg-[#0F3D3A] text-[rgb(200,248,169)]"
+            : "bg-white text-[#0F3D3A]"
             } border-t border-[rgb(200,248,169)]/40`}
         >
           <ul className="flex flex-col items-center py-4 space-y-4 font-medium">
@@ -162,11 +165,11 @@ const Navbar = () => {
             <Link to="/contact">
               <button
                 className={`flex items-center gap-2 px-6 py-2 rounded-md font-medium transition-all duration-300 ${isHomePage
-                    ? "bg-[rgb(200,248,169)] text-[#0F3D3A] hover:bg-[#A8E6A3]"
-                    : "bg-[#0F3D3A] text-[rgb(200,248,169)] hover:bg-[#0E3530]"
+                  ? "bg-[rgb(200,248,169)] text-[#0F3D3A] hover:bg-[#0E3530]"
+                  : "bg-[#0F3D3A] text-[rgb(200,248,169)] hover:bg-white"
                   }`}
               >
-                Contact <ArrowRight className="w-4 h-4" />
+                Contact Us<ArrowRight className="w-5 h-4" />
               </button>
             </Link>
           </div>

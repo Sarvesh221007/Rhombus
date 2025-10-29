@@ -38,7 +38,7 @@ const GetInTouch = () => {
     return (
         <section
             ref={sectionRef}
-            className="w-full flex flex-col items-center justify-center mt-20 px-4 md:px-8 mb-20"
+            className="w-full flex flex-col items-center justify-center mt-20 px-3 md:px-4 mb-20"
         >
             {/* Tag + Heading */}
             <motion.div
@@ -89,7 +89,7 @@ const GetInTouch = () => {
 
                     {/* Contact Form */}
                     <motion.div
-                        className="w-full md:w-[90%] lg:w-[45%] bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden z-10 
+                        className="w-full md:w-[90%] lg:w-[45%] bg-white border border-gray-200 shadow-2xl rounded-lg overflow-hidden z-10  
                                relative lg:absolute lg:mr-20 lg:top-[57%] lg:right-0 lg:-translate-y-1/2"
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -98,26 +98,30 @@ const GetInTouch = () => {
                     >
                         {/* Contact Form Header */}
                         <div
-                            className="w-full bg-[#0F3D3A] flex flex-col sm:flex-row items-center justify-between gap-3 px-6 md:px-10 h-auto py-4 sm:h-20 rounded-t-lg shadow-md transition-all duration-300 ease-in-out"
+                            className="w-full bg-[#0F3D3A] flex flex-col sm:flex-row items-center justify-between px-2 md:px-6 h-auto py-6 sm:h-25 shadow-md transition-all duration-300 ease-in-out"
                         >
-                            <div className="flex-shrink-0">
-                                <img
-                                    src="https://execor.vamtam.com/wp-content/uploads/2025/03/Logo-white.svg"
-                                    alt="Company Logo"
-                                    className="w-[92px] h-[20px] object-contain"
-                                    loading="lazy"
-                                    decoding="async"
-                                />
+                            <div className="flex flex-row gap-4">
+                                <div className="flex-shrink-0 flex items-center">
+                                    <img
+                                        src="https://execor.vamtam.com/wp-content/uploads/2025/03/Logo-white.svg"
+                                        alt="Company Logo"
+                                        className="w-[90px] h-[20px] object-contain mb-1"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
+                                </div>
+
+                                <div className="h-[32px] w-[1px] bg-white opacity-40 ml-2"></div>
+
+                                <div className="text-center mr-10">
+                                    <h1 className="text-lg md:text-lg font-semibold text-white tracking-wide">
+                                        Schedule a Free Consultation
+                                    </h1>
+                                </div>
                             </div>
 
-                            <div className="text-center flex-1">
-                                <h3 className="text-lg md:text-2xl font-bold text-white tracking-wide">
-                                    Schedule a Free Consultation
-                                </h3>
-                            </div>
-
-                            <div className="flex-shrink-0">
-                                <Send className="w-6 h-6 text-white" />
+                            <div className="flex-shrink-0 ">
+                                <Send className="w-12 h-10 text-white mb-4 " />
                             </div>
                         </div>
 
@@ -128,7 +132,7 @@ const GetInTouch = () => {
                         >
                             <div className="flex flex-col md:flex-row gap-4">
                                 <div className="flex flex-col w-full md:w-1/2">
-                                    <label className="text-sm font-medium mb-1">First Name</label>
+                                    <label className="text-md font-normal mb-1 opacity-70">First Name</label>
                                     <input
                                         type="text"
                                         name="firstName"
@@ -139,7 +143,7 @@ const GetInTouch = () => {
                                     />
                                 </div>
                                 <div className="flex flex-col w-full md:w-1/2">
-                                    <label className="text-sm font-medium mb-1">Last Name</label>
+                                    <label className="text-md font-normal mb-1 opacity-70">Last Name</label>
                                     <input
                                         type="text"
                                         name="lastName"
@@ -152,7 +156,7 @@ const GetInTouch = () => {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-sm font-medium mb-1">Email</label>
+                                <label className="text-md font-normal mb-1 opacity-70">Email</label>
                                 <input
                                     type="email"
                                     name="email"
@@ -164,7 +168,7 @@ const GetInTouch = () => {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-sm font-medium mb-1">Phone</label>
+                                <label className="text-md font-normal mb-1 opacity-70">Phone</label>
                                 <input
                                     type="tel"
                                     name="phone"
@@ -176,10 +180,10 @@ const GetInTouch = () => {
                             </div>
 
                             <div className="flex flex-col">
-                                <label className="text-sm font-medium mb-1">Message</label>
+                                <label className="text-md font-normal mb-1 opacity-70">Message</label>
                                 <textarea
                                     name="message"
-                                    rows="5"
+                                    rows="6"
                                     value={form.message}
                                     onChange={handleChange}
                                     placeholder="Write your message here..."
@@ -190,16 +194,16 @@ const GetInTouch = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-[rgb(200,248,169)] text-black font-semibold py-3 rounded-md flex items-center justify-between px-4 transition-all duration-300 hover:bg-[#0E3530] hover:text-white"
+                                className="md:w-full lg:w-[230px] bg-[rgb(200,248,169)] text-[#0E3530] font-normal py-3 rounded-md flex items-center justify-between px-4 transition-all duration-300 hover:bg-[#0E3530] hover:text-white cursor-pointer"
                             >
-                                Submit <ArrowRight className="w-5 h-5" />
+                                Submit <ArrowRight className="w-5 h-5 opacity-90" />
                             </button>
 
                             <div className="relative flex items-center justify-center my-4">
-                                <span className="absolute w-2/3 border-t border-gray-300"></span>
+                                <span className="absolute w-[100%] border-t border-gray-200"></span>
                             </div>
 
-                            <p className="text-sm text-gray-500 text-center">
+                            <p className="text-sm text-gray-500 text-left text-[13px] opacity-80">
                                 By submitting this form, you agree to our Privacy Policy. We may
                                 contact you via email or phone for scheduling or marketing purposes.
                             </p>
@@ -207,7 +211,7 @@ const GetInTouch = () => {
                     </motion.div>
                     {/* Left Bottom Info Box */}
                     <motion.div
-                        className="relative flex flex-col w-[90%] md:w-[417px] rounded-[8px] overflow-hidden shadow-2xl border border-transparent 
+                        className="relative flex flex-col w-[100%] md:w-[500px] rounded-[8px] overflow-hidden  border border-transparent 
                lg:absolute lg:-bottom-[150px] lg:left-6"
                         style={{
                             boxSizing: "border-box",
@@ -221,20 +225,20 @@ const GetInTouch = () => {
                     >
                         {/* 🌑 Top Section */}
                         <div
-                            className="flex flex-col justify-center items-center text-center p-6 
+                            className="flex flex-col justify-left p-6 
                    text-white transition-all duration-500 ease-in-out
-                   bg-[rgb(15,61,58)] md:bg-[rgb(15, 61, 58)] lg:bg-[rgba(15,61,58,0.85)] 
+                   bg-[rgb(15,61,58)] md:bg-[rgb(15, 61, 58)] lg:bg-[rgba(15,61,58,0.75)] 
                    backdrop-blur-md"
                             style={{
                                 backdropFilter: "blur(10px)",
                                 WebkitBackdropFilter: "blur(10px)",
                             }}
                         >
-                            <h3 className="text-xl font-semibold mb-3 drop-shadow-lg">
+                            <h3 className="text-xl font-normal mb-3 drop-shadow-lg">
                                 Have a Challenge or an Idea?
                             </h3>
 
-                            <p className="text-[rgba(255,255,255,0.85)] leading-relaxed">
+                            <p className="text-[rgba(255,255,255,0.85)] leading-relaxed text-md">
                                 Fill out the form, and let’s talk about how we can support your
                                 business with tailored solutions.
                             </p>
@@ -242,18 +246,20 @@ const GetInTouch = () => {
 
                         {/* 🪄 Bottom Section */}
                         <div
-                            className="flex flex-col items-center justify-between text-center py-6 px-4 bg-[rgb(244,245,241)] font-['DM Sans']"
+                            className="flex flex-col items-center justify-between text-center py-6 bg-[rgb(244,245,241)] font-['DM Sans']"
                         >
                             {/* ---- PHONE SECTION ---- */}
                             <a
                                 href="tel:18003568933"
-                                className="w-[88%] flex items-center justify-between py-4 px-5 
+                                className="w-[92%] flex items-center justify-between py-4 px-4 
                        bg-[rgb(244,245,241)] rounded-md hover:bg-white 
                        transition-colors duration-300 cursor-pointer group"
                             >
                                 <div className="flex items-center gap-3 text-[rgba(0,0,0,0.75)]">
-                                    <Phone className="w-5 h-5 text-[rgba(0,0,0,0.75)]" />
-                                    <span className="text-base font-medium">1-800-356-8933</span>
+                                    <div className="bg-white w-8 h-8 flex item-center justify-center">
+                                        <Phone className="w-5 h-5 text-[rgba(0,0,0,0.75)]" />
+                                    </div>
+                                    <span className="text-base font-normal">1-800-356-8933</span>
                                 </div>
 
                                 <ArrowRight
@@ -262,22 +268,27 @@ const GetInTouch = () => {
                             </a>
 
                             {/* ---- SEPARATOR LINE ---- */}
-                            <div className="w-[88%] border-t border-black/15 my-4"></div>
+                            <div className="w-[90%] border-t border-black/15 my-4"></div>
 
                             {/* ---- LOCATION SECTION ---- */}
                             <a
                                 href="https://maps.google.com/?q=Seventh+Ave,+20th+Floor,+New+York,+NY+10018"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-[88%] flex items-center justify-between py-4 px-5 
+                                className="w-[92%] flex items-center justify-between py-4 px-4 
                        bg-[rgb(244,245,241)] rounded-md hover:bg-white 
                        transition-colors duration-300 cursor-pointer group"
                             >
                                 <div className="flex items-start gap-3 text-[rgba(0,0,0,0.75)]">
-                                    <MapPin className="w-5 h-5 mt-1 text-[rgba(0,0,0,0.75)]" />
-                                    <span className="text-base font-medium text-left">
-                                        Seventh Ave, 20th Floor, New York, NY 10018
-                                    </span>
+                                    <MapPin className="w-5 h-5 mt-4 text-[rgba(0,0,0,0.75)]" />
+                                    <div className="flex justify-left flex-col">
+                                        <span className="text-base font-normal text-left">
+                                            Visit us.
+                                        </span>
+                                        <span className="text-base font-normal text-left">
+                                            Seventh Ave, 20th Floor, New York, NY 10018
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <ArrowRight

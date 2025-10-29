@@ -64,11 +64,11 @@ const Navbar = () => {
         }`}
       style={{
         backgroundColor,
-        borderBottom,
+        borderBottom: isScrolled
+          ? "1px solid transparent"
+          : "2px solid transparent", // No border when not scrolled
         boxShadow:
-          isScrolled || !isHomePage
-            ? "0 4px 14px rgba(0,0,0,0.08)"
-            : "none",
+          isScrolled || !isHomePage ? "0 4px 14px rgba(0,0,0,0.08)" : "none",
         backdropFilter: isScrolled ? "blur(16px)" : "none",
         WebkitBackdropFilter: isScrolled ? "blur(16px)" : "none",
         transition:

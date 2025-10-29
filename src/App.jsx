@@ -16,15 +16,15 @@ function Layout() {
   const hideBreadcrumb = location.pathname === "/";
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       <Cursor />
       <Navbar />
       {!hideBreadcrumb && <Breadcrumb />}
 
-      {/* ✅ ScrollToTop should be outside Routes */}
       <ScrollToTop />
 
-      <main className="flex-grow">
+      {/* Add padding equal to Navbar height */}
+      <main className="flex-grow pt-[80px]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -33,11 +33,13 @@ function Layout() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+
       <SubscribeSection />
       <Footer />
     </div>
   );
 }
+
 
 function App() {
   return (

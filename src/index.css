@@ -10,8 +10,6 @@
 /* Animations & Keyframes */
 /* ---------------------- */
 
-/* Commented this first fadeIn that re-triggers layout during save */
-/*
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -26,7 +24,6 @@
 .animate-fadeIn {
   animation: fadeIn 1s ease-in-out;
 }
-*/
 
 @media (max-aspect-ratio: 1/2) {
   section.custom-hero {
@@ -54,25 +51,43 @@
   animation: lineGrow 2s ease-in-out infinite alternate;
 }
 
+/* @keyframes slideInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
+
+/* .animate-slideInUp {
+  animation: slideInUp 1s ease forwards;
+} */
+
 /* Sidebar fade-in */
 @keyframes fadeIn {
-  from { opacity: 0; /* transform: translateY(10px); */ }
-  to { opacity: 1; /* transform: translateY(0); */ }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fadeIn {
   animation: fadeIn 0.4s ease forwards;
 }
 
+/* ✨ Keep only black circle hover effects if any component uses it directly */
+/* (Removed the custom cursor global effect completely) */
+
 /* Final smooth fade-in for sections */
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    /* transform: translateY(20px); */ /* ❌ commented to avoid scroll resets */
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    /* transform: translateY(0); */ /* ❌ commented to avoid scroll resets */
+    transform: translateY(0);
   }
 }
 
@@ -80,10 +95,11 @@
   animation: fadeIn 0.75s ease both;
 }
 
+
 /* Parent Hero Section Container */
 .elementor-element-926da5a .e-con-inner {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Side by side */
   align-items: center;
   justify-content: space-between;
   height: 450px;
@@ -110,13 +126,16 @@
 }
 
 /* Optional: Overlay effect on background */
-/* Commented absolute overlay since it can cause reflow on hot reload */
-/*
 .elementor-element-066bb72::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(15, 61, 58, 0.3);
+  background: rgba(15, 61, 58, 0.3); /* soft overlay tint */
   border-radius: 6px;
 }
-*/
+
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}

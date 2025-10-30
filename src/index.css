@@ -139,3 +139,15 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+
+
+.vamtam-theme-quote-left {
+  color: var(--vamtam-accent-color-1); /* #0F3D3A */
+  font-size: 36px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.vamtam-theme-quote-left:hover {
+  color: var(--vamtam-accent-color-2); /* #C8F8A9 */
+  transform: scale(1.1);
+}

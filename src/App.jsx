@@ -24,7 +24,7 @@ function Layout() {
       <ScrollToTop />
 
       {/* Add padding equal to Navbar height */}
-      <main className="flex-grow pt-[80px]">
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

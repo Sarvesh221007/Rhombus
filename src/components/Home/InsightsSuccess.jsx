@@ -42,7 +42,7 @@ const stories = [
 
 const InsightsSuccess = () => {
   return (
-    <section className="w-full py-10 font-['DM Sans'] text-[rgba(0,0,0,0.75)]">
+    <section className="w-full lg:mt-60 font-['DM Sans'] text-[rgba(0,0,0,0.75)]">
       {/* Fixed-width centered container */}
       <div className="max-w-[1266px] mx-auto flex flex-col items-center justify-center">
         {/* --- Tag --- */}

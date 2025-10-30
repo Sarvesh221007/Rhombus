@@ -46,7 +46,7 @@ const GetInTouch = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
-                className="text-left w-full md:w-[90%]"
+                className="text-left w-full md:w-[92%]"
             >
                 <div
                     className="inline-block px-3 py-1"
@@ -73,11 +73,11 @@ const GetInTouch = () => {
 
             {/* Main Content */}
             <div
-                className="relative w-[97%] mt-4 flex flex-col lg:flex-row items-center justify-between gap-8 min-h-[600px] lg:h-[500px]"
+                className="relative w-[93%] mt-4 flex flex-col lg:flex-row items-center justify-between gap-8 min-h-[600px] lg:h-[500px]"
             >
                 {/* Background image */}
                 <div
-                    className="relative w-full lg:w-[98%] h-[400px] md:h-[500px] bg-cover bg-center rounded-2xl shadow-lg"
+                    className="relative w-full lg:w-[100%] h-[400px] md:h-[500px] bg-cover bg-center rounded-lg shadow-lg"
                     style={{
                         backgroundImage: `url("https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-1250030317_edit.jpg")`,
                     }}

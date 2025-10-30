@@ -59,8 +59,8 @@ const CEOInsights = () => {
   return (
     <section className="flex flex-col items-center justify-cente">
       {/* Big Box */}
-      <div className="w-[95%] lg:mt-20 md:w-[92%] rounded-[5px] shadow-lg flex flex-col">
-        <div className="w-full lg:px-12 md:px-8 sm:px-4 pt-10 pb-4 bg-[rgb(244,245,241)]">
+      <div className="w-[95%] lg:mt-20 md:w-[92%] shadow-lg flex flex-col">
+        <div className="w-full lg:px-12 md:px-8 sm:px-4 pt-10 pb-4 bg-[rgb(244,245,241)] rounded-t-lg">
           {/* === CEO Card === */}
           <motion.div
             key={current}
@@ -165,7 +165,7 @@ const CEOInsights = () => {
         </div>
 
         {/* Bottom Client Section */}
-        <div className="w-full py-6 px-10 bg-[#0E3530] text-white flex flex-col md:flex-row items-center justify-between rounded-b-[20px]  md:gap-0">
+        <div className="w-full py-6 px-10 bg-[#0E3530] text-white flex flex-col md:flex-row items-center justify-between rounded-b-lg  md:gap-0">
           <h2 className="text-[18px] md:text-[20px] font-normal text-center md:text-left">
             What Our Clients Say
           </h2>

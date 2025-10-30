@@ -39,7 +39,7 @@ const ClientsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-white px-4 sm:px-8 md:px-16 py-16 sm:py-24 md:py-32 overflow-hidden"
+      className="relative bg-white px-4 sm:px-8 md:px-16 py-6 sm:py-8 md:py-10 overflow-hidden"
     >
       {/* ---------- SECTION TITLE ---------- */}
       <motion.div

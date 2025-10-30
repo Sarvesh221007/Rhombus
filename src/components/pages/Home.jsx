@@ -36,9 +36,9 @@ const Home = () => {
         <VisionSection />
         <RightSoulution />
         <ClientsSection />
-        <GetInTouch />
         <BrandLogos />
         <CEOInsights />
+        <GetInTouch />
         <InsightsSuccess />
       </main>
   );

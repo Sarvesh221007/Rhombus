@@ -58,7 +58,7 @@ const ClientsSection = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
-        className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-10 md:gap-12 mb-16 sm:mb-20"
+        className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-6 md:gap-8 mb-16 sm:mb-20"
       >
         <h2 className="font-['forum']  text-3xl sm:text-4xl md:text-5xl text-[#0E3530] w-full md:w-1/2 leading-tight">
           Empowering Global Connections

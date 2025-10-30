@@ -71,9 +71,9 @@ const CEOInsights = () => {
             className="w-full flex flex-col md:flex-row items-center justify-between"
           >
             {/* === First Main Div: CEO Details === */}
-            <div className="flex flex-col items-center md:items-start md:w-1/3 gap-1">
+            <div className="flex flex-col items-left sm:justify-left md:items-start md:w-1/3 gap-1">
               {/* --- First Inner Div: Logo --- */}
-              <div className="flex justify-start md:justify-start w-full md:w-[50%] -mt-20">
+              <div className="flex justify-start md:justify-start w-full md:w-[50%] -lg-mt-20">
                 <img
                   src={ceos[current].logo}
                   alt={ceos[current].name}
@@ -89,7 +89,7 @@ const CEOInsights = () => {
             </div>
 
             {/* === Second Main Div: Content Area === */}
-            <div className="flex flex-col items-center ml-30 justify-between w-full md:w-2/3 gap-2 pt-6 md:pt-10">
+            <div className="flex flex-col items-center md:ml-30 sm:ml-15 justify-between w-full md:w-2/3 gap-2 pt-6 md:pt-10">
               <div className="w-full md:w-[70%]">
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
@@ -128,7 +128,7 @@ const CEOInsights = () => {
                   {ceos[current].stat} {ceos[current].statText}
                 </p>
               </div>
-              <div className="w-full md:w-[70%] flex justify-end -mt-10">
+              <div className="w-full md:w-[70%] flex justify-end lg:-mt-10 sm:pr-4">
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
@@ -144,7 +144,7 @@ const CEOInsights = () => {
 
 
           {/* Slider Arrows below CEO Card */}
-          <div className="w-full flex justify-left mt-1 gap-2">
+          <div className="w-full flex justify-left mt-1 gap-2 sm:ml-8 md:ml-0">
             {/* Prev Button */}
             <button
               onClick={prevSlide}
@@ -165,7 +165,7 @@ const CEOInsights = () => {
         </div>
 
         {/* Bottom Client Section */}
-        <div className="w-full py-6 px-10 bg-[#0E3530] text-white flex flex-col md:flex-row items-center justify-between rounded-b-lg  md:gap-0">
+        <div className="w-full py-6 px-10 bg-[#0E3530] text-white flex  md:flex-row items-center justify-between rounded-b-lg  md:gap-0">
           <h2 className="text-[18px] md:text-[20px] font-normal text-center md:text-left">
             What Our Clients Say
           </h2>

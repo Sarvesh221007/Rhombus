@@ -20,11 +20,7 @@ function Layout() {
       <Cursor />
       <Navbar />
       {!hideBreadcrumb && <Breadcrumb />}
-
-      <ScrollToTop />
-
-      {/* Add padding equal to Navbar height */}
-      <main className="flex-grow">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

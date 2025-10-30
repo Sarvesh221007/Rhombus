@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#0F3D3A] text-white font-['DM Sans']">
       {/* === MAIN FOOTER FLEX LAYOUT === */}
-      <div className="max-w-7xl mx-auto pt-16  flex flex-wrap justify-between gap-10">
+      <div className="max-w-7xl mx-auto pt-16 sm:px-4  flex flex-wrap justify-between gap-10">
         {/* LOGO + TAGLINE */}
         <div className="min-w-[300px] flex-1">
           <a href="/">
@@ -165,7 +165,7 @@ const Footer = () => {
 
 
       {/* === BOTTOM FOOTER BAR === */}
-      <div className=" py-4 flex flex-col md:flex-row items-center justify-between gap-2 max-w-7xl mx-auto">
+      <div className=" py-4 sm:px-4 flex flex-row md:flex-row items-center justify-between gap-2 max-w-7xl mx-auto">
         {/* Back to Top */}
         <div
           style={{
@@ -216,7 +216,7 @@ const Footer = () => {
 
 
       {/* === SOCIAL + COPYRIGHT (Optimized) === */}
-      <div className="border-t border-gray-700 py-8 flex flex-col md:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
+      <div className="border-t border-gray-700 py-8 sm:px-4 flex flex-row md:flex-row items-center justify-between gap-4 max-w-7xl mx-auto">
         {/* Left Side – Clickable Copyright */}
         <div>
           <a

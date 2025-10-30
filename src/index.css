@@ -151,3 +151,16 @@ html {
   color: var(--vamtam-accent-color-2); /* #C8F8A9 */
   transform: scale(1.1);
 }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}

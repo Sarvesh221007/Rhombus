@@ -3,79 +3,104 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 const tabData = [
-    {
-        title: "Revenue Has Stalled or Dropped",
-        description:
-            "Quickly identify and resolve revenue blockers with a comprehensive business audit. We uncover hidden challenges and provide strategic solutions to restore growth.",
-        cards: [
-            {
-                heading: "Revenue Optimization Strategies",
-                text: "Quickly identify and resolve revenue blockers with a comprehensive business audit.",
-            },
-            {
-                heading: "Pricing & Profitability Analysis",
-                text: "Uncover pricing inefficiencies and maximize profitability with data-backed insights.",
-            },
-            {
-                heading: "Market Expansion Frameworks",
-                text: "Discover new growth channels and scale sustainably through proven frameworks.",
-            },
-        ],
-        bgImage:
-            "https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-2148548744.jpg",
-        buttonText: "Book A Free Strategy Call",
-        buttonLink: "https://execor.vamtam.com/free-consultation/",
-        icon: "vamtamtheme- vamtam-theme-logo-sign",
-    },
-    {
-        title: "Scaling My Business",
-        description:
-            "Unlock new growth opportunities with expert scalability strategies. We help you optimize operations, expand efficiently, and maximize long-term success.",
-        cards: [
-            {
-                heading: "Customer Retention Strategy",
-                text: "Uncover churn risks and improve lifetime value with a data-driven retention audit.",
-            },
-            {
-                heading: "Operational Efficiency Review",
-                text: "Streamline workflows and eliminate inefficiencies to boost performance across departments.",
-            },
-            {
-                heading: "Go-to-Market Strategy Support",
-                text: "Launch with confidence using proven frameworks tailored to your product and goals.",
-            },
-        ],
-        bgImage:
-            "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-pavel-danilyuk-5520284-.jpg",
-        buttonText: "Explore Growth Opportunities",
-        buttonLink: "https://execor.vamtam.com/growth/",
-        icon: "vamtamtheme- vamtam-theme-logo-sign",
-    },
-    {
-        title: "Understanding My Competitors",
-        description:
-            "Gain a competitive edge with in-depth market intelligence. We analyze your competitors’ strengths and weaknesses to position your business for sustainable advantage.",
-        cards: [
-            {
-                heading: "Competitive Landscape Analysis",
-                text: "Gain a clear view of your market position with insights into competitor strategies.",
-            },
-            {
-                heading: "Competitor Marketing Breakdown",
-                text: "Understand where your competitors are winning online—and where you can outperform them.",
-            },
-            {
-                heading: "Competitor Intelligence Reports",
-                text: "Access actionable intelligence to inform smarter, faster business decisions.",
-            },
-        ],
-        bgImage:
-            "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-tima-miroshnichenko-6694474.jpg",
-        buttonText: "Get Competitor Insights",
-        buttonLink: "https://execor.vamtam.com/insights/",
-        icon: "vamtamtheme- vamtam-theme-logo-sign",
-    },
+  {
+    title: "Student Visa Assistance",
+    description:
+      "Expert guidance to help students successfully apply for visas to study abroad. Our consultants provide complete end-to-end support — from document preparation to interview readiness — ensuring a smooth, stress-free experience.",
+    cards: [
+      {
+        heading: "Visa Consultation & Guidance",
+        text: "Get personalized advice for Australia, UK, Canada, USA, and other destinations.",
+      },
+      {
+        heading: "Document Preparation & Review",
+        text: "Ensure all your academic and financial documents meet embassy standards.",
+      },
+      {
+        heading: "Application & Interview Support",
+        text: "We help you complete visa forms and prepare for embassy interviews with confidence.",
+      },
+    ],
+    bgImage:
+      "https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-75546129.jpg",
+    buttonText: "Get Free Visa Consultation",
+    buttonLink: "#contact",
+    icon: "vamtamtheme-vamtam-theme-logo-sign",
+  },
+  {
+    title: "University Placement Support",
+    description:
+      "Choosing the right university is a life-changing decision. Our experts guide you through selecting top institutions that match your goals, academic profile, and career aspirations — ensuring a perfect academic fit.",
+    cards: [
+      {
+        heading: "University & Course Selection",
+        text: "We help you choose the best-fit institutions based on your academic goals and budget.",
+      },
+      {
+        heading: "Application Submission Support",
+        text: "From filling out forms to managing deadlines, we handle the entire admission process.",
+      },
+      {
+        heading: "Offer Letter & Admission Assistance",
+        text: "Get guidance in receiving and confirming university offers from reputed institutions.",
+      },
+    ],
+    bgImage:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-pavel-danilyuk-5520284-.jpg",
+    buttonText: "Explore University Options",
+    buttonLink: "#services",
+    icon: "vamtamtheme-vamtam-theme-logo-sign",
+  },
+  {
+    title: "Application & Document Review",
+    description:
+      "Accurate and complete documentation is key to your study success. Our team reviews every document carefully — academic records, financial proofs, and application materials — to avoid rejections and delays.",
+    cards: [
+      {
+        heading: "Comprehensive Document Checklist",
+        text: "We ensure all required documents are included for both admission and visa applications.",
+      },
+      {
+        heading: "Document Verification",
+        text: "Our experts review transcripts, SOPs, and financial proofs to ensure accuracy and compliance.",
+      },
+      {
+        heading: "Professional Editing Support",
+        text: "Enhance your application presentation with clear, well-structured, and compliant documentation.",
+      },
+    ],
+    bgImage:
+      "https://execor.vamtam.com/wp-content/uploads/2025/04/pexels-tima-miroshnichenko-6694474.jpg",
+    buttonText: "Review My Documents",
+    buttonLink: "#contact",
+    icon: "vamtamtheme-vamtam-theme-logo-sign",
+  },
+  {
+    title: "Consultancy for Education Agents",
+    description:
+      "We collaborate with education agents worldwide, providing them with resources, training, and direct support to manage their students’ visa and admission processes efficiently and professionally.",
+    cards: [
+      {
+        heading: "Agent Partnership Programs",
+        text: "Join our network to access global universities and student management tools.",
+      },
+      {
+        heading: "Application Management Support",
+        text: "We help agents streamline their client processes with verified documentation and timely submissions.",
+      },
+      {
+        heading: "Visa & Compliance Guidance",
+        text: "Provide your clients with the best visa advice using our expertise and up-to-date immigration insights.",
+      },
+    ],
+    bgImage:
+      "https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-2148548744.jpg",
+    buttonText: "Partner With Rhombus",
+    buttonLink: "#contact",
+    icon: "vamtamtheme-vamtam-theme-logo-sign",
+  },
 ];
+
 
 const RightSolution = () => {
     const [activeTab, setActiveTab] = useState(0);

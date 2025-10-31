@@ -10,6 +10,8 @@ import Cursor from "./components/ui/Cursor";
 import Breadcrumb from "./components/layout/Breadcrumb";
 import ScrollToTop from "./components/ui/ScrollToTop";
 import SubscribeSection from "./components/layout/SubscribeSection";
+import FreeCounsellingPopup from "./components/common/FreeCounsellingPopup";
+import ChatPopup from "./components/common/ChatPopup";
 
 function Layout() {
   const location = useLocation();
@@ -18,8 +20,8 @@ function Layout() {
   return (
     <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       <Cursor />
-      <Navbar />
       {!hideBreadcrumb && <Breadcrumb />}
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,8 +31,10 @@ function Layout() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
-
       <SubscribeSection />
+      {/* Global Popup (fixed overlay, not part of layout) */}
+      <FreeCounsellingPopup />
+      <ChatPopup />
       <Footer />
     </div>
   );

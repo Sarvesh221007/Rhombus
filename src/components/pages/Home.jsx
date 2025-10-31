@@ -13,7 +13,6 @@ import CEOInsights from "../Home/CEOInsights";
 import WhatSetsUsApart from "../Home/WhatSetsUsApart";
 import RightSoulution from "../Home/RightSolution";
 import BrandLogos from "../Home/BrandLogos";
-import Footer from "../layout/Footer"; // ✅ make sure this path is correct
 
 const Home = () => {
   const imageRef = useRef(null);

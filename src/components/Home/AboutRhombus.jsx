@@ -4,62 +4,75 @@ import { motion } from "framer-motion";
 import { ChevronDown, ChevronUp, CheckCircle } from "lucide-react";
 
 const tickItems = [
-  "Trusted education and immigration experts",
-  "15+ years of industry experience",
-  "Transparent and ethical guidance",
+  "15+ years of experience in education and immigration",
+  "Certified by British Council and ICEF",
+  "Trusted by students and education agents worldwide",
 ];
 
 
 const accordionData = [
   {
-    title: "Experienced Strategists",
+    title: "How does Rhombus help me choose the right university?",
     content: [
-      "Our team of seasoned strategists brings decades of combined experience across industries and markets.",
-      "With a deep understanding of business dynamics, we transform challenges into growth strategies tailored to your goals.",
+      "We start by understanding your academic background, interests, and career goals to recommend the best-fit universities and programs.",
+      "Our experienced counselors ensure that your choices align with your long-term aspirations and eligibility criteria.",
     ],
     items: [
-      "Proven track record in multiple industries",
-      "Expertise in both startups and large enterprises",
-      "Strategic guidance for overcoming complex challenges",
+      "Personalized university & course matching",
+      "Guidance based on goals & qualifications",
+      "Support for top global institutions",
     ],
   },
   {
-    title: "Tailored Solutions",
+    title: "What support does Rhombus provide during the visa process?",
     content: [
-      "We know your organization is unique—and your strategy should reflect that.",
-      "Rather than applying generic frameworks, we co-create actionable and sustainable solutions.",
+      "Our visa experts provide end-to-end guidance for applications to countries like Australia, UK, Canada, USA, Germany, and New Zealand.",
+      "From document preparation to interview practice, we make sure your visa process is smooth and stress-free.",
     ],
     items: [
-      "Cross-industry expertise",
-      "Solutions that work in the real world",
-      "Every strategy is customized to your specific needs",
+      "Step-by-step visa assistance",
+      "Document preparation & compliance",
+      "Interview guidance & follow-up support",
     ],
   },
   {
-    title: "Data-Driven Approach",
+    title: "Why should I trust Rhombus with my study abroad journey?",
     content: [
-      "Intuition alone isn’t enough—our strategies are grounded in data for clarity and confidence.",
-      "We help you understand why things happen—and what to do next.",
+      "Founded by Heena Gupta and Debraj Banerjee, Rhombus brings over 15 years of proven experience in global education and visa consultancy.",
+      "We are certified by the British Council and ICEF, ensuring transparency, professionalism, and success for every student.",
     ],
     items: [
-      "From market research to internal KPIs",
-      "Real-time performance visibility",
-      "Strategies built on evidence—not assumptions",
+      "15+ years of experience & trust",
+      "Certified by British Council & ICEF",
+      "Thousands of successful visa approvals",
     ],
   },
   {
-    title: "Commitment to Your Success",
+    title: "Which countries can I apply to study in with Rhombus?",
     content: [
-      "Our work doesn’t end with strategy—it continues with long-term partnership.",
-      "We go the extra mile to ensure effective implementation and tangible outcomes.",
+      "We offer expert guidance for top destinations including Australia, Canada, UK, USA, Germany, and New Zealand.",
+      "Our consultants help you understand each country’s admission process, visa requirements, and post-study opportunities.",
     ],
     items: [
-      "From strategy to long-term guidance",
-      "Transparent and aligned with your vision",
-      "We track success through outcomes, not deliverables",
+      "Study in 6+ major global destinations",
+      "Updated visa & admission guidance",
+      "Tailored advice for your target country",
+    ],
+  },
+  {
+    title: "What happens after I receive my university offer?",
+    content: [
+      "Once your offer is confirmed, our team assists with admission acceptance, fee payment, and student visa filing.",
+      "We also offer pre-departure sessions and post-arrival assistance to help you settle smoothly abroad.",
+    ],
+    items: [
+      "Admission confirmation & fee guidance",
+      "Visa filing & documentation support",
+      "Pre-departure & post-arrival assistance",
     ],
   },
 ];
+
 
 
 
@@ -94,7 +107,7 @@ const AboutSection = () => {
             borderRadius: "4px",
           }}
         >
-          Our Client
+          About Rhombus
         </motion.div>
 
         {/* ✅ First Row: Heading + Paragraph */}
@@ -113,14 +126,14 @@ const AboutSection = () => {
               transition={{ duration: 0.8 }}
               className="text-[#0E3530] text-4xl sm:text-5xl leading-snug font-['Forum'] mb-10"
             >
-              Driving success through strategy.
+              Guiding Students Toward Global Success
             </motion.h2>
           </div>
 
           <div className="md:w-[45%] w-full">
             <p className="text-[16px] leading-[26px] text-[rgba(0,0,0,0.75)] pt-4">
-              Our mission is simple: to guide students toward a brighter future by
-              making studying abroad an achievable and exciting opportunity.
+              At Rhombus Education and Immigration Services, we empower students to achieve their academic dreams abroad through transparent, personalized, and expert guidance. With certifications from the British Council and ICEF,
+              our trusted team ensures every step — from course selection to visa approval — is seamless and successful.
             </p>
           </div>
         </motion.div>
@@ -176,7 +189,7 @@ const AboutSection = () => {
               {/* Section 1 - Heading */}
               <div className="text-center mb-2">
                 <p className="font-['forum'] text-[20px] text-black font-normal tracking-wide">
-                  Data-Driven Strategies
+                  Student-Centered Guidance
                 </p>
               </div>
 
@@ -198,7 +211,7 @@ const AboutSection = () => {
                 <button
                   className="bg-[#0F3D3A] text-white font-medium text-[16px] px-5 py-3 rounded-md shadow-sm hover:bg-[#00000099] hover:text-white transition-all duration-300 ease-in-out w-full"
                 >
-                  Free Consultation →
+                  Get Free Counselling →
                 </button>
               </div>
             </div>

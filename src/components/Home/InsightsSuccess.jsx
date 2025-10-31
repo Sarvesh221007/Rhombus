@@ -4,45 +4,45 @@ import { motion } from "framer-motion";
 const stories = [
   {
     image: "/insights/img1.webp",
-    title: "Maximizing Team Productivity",
+    title: "From India to Australia – A Dream Come True",
     date: "Oct 12, 2025",
-    desc: "Learn how top leaders manage time and boost efficiency.Learn how top leaders manage time and boost efficiency.",
-    category: "Business",
-    tag: "Leadership",
+    desc: "Learn how our expert visa guidance helped Aditi secure admission to the University of Sydney and smoothly obtain her student visa.",
+    category: "Student Success",
+    tag: "Australia Visa",
     link: "#",
   },
   {
     image: "/insights/img2.webp",
-    title: "Successful Client Partnerships",
+    title: "Smooth Visa Approval for UK Aspirant",
     date: "Sep 28, 2025",
-    desc: "Case studies on building long-lasting client relationships.Learn how top leaders manage time and boost efficiency.",
-    category: "Strategy",
-    tag: "Partnerships",
+    desc: "Rohit’s journey to the University of Birmingham was made easy with our step-by-step document review and visa support.",
+    category: "Visa Approval",
+    tag: "UK Student Visa",
     link: "#",
   },
   {
     image: "/insights/img3.webp",
-    title: "Digital Transformation Journey",
+    title: "Achieving Excellence in Canada",
     date: "Aug 15, 2025",
-    desc: "How companies embrace technology to scale faster.Learn how top leaders manage time and boost efficiency.",
-    category: "Technology",
-    tag: "Innovation",
+    desc: "Discover how Priya successfully got her Canada study visa and started her dream program at the University of Toronto with our team’s help.",
+    category: "Global Education",
+    tag: "Canada Admission",
     link: "#",
   },
   {
     image: "/insights/img4.webp",
-    title: "Leadership Insights",
+    title: "Trusted Partner for Education Agents",
     date: "Jul 10, 2025",
-    desc: "Key strategies for effective leadership in modern businesses.Learn how top leaders manage time and boost efficiency.",
-    category: "Growth",
-    tag: "Insights",
+    desc: "Through collaboration with Rhombus, multiple education agents now offer efficient, transparent, and successful services to their student clients.",
+    category: "Agent Partnership",
+    tag: "Collaboration",
     link: "#",
   },
 ];
 
 const InsightsSuccess = () => {
   return (
-    <section className="w-full lg:mt-60 font-['DM Sans'] text-[rgba(0,0,0,0.75)]">
+    <section className="w-full mb-10 lg:mt-60 font-['DM Sans'] text-[rgba(0,0,0,0.75)]">
       {/* Fixed-width centered container */}
       <div className="max-w-[1266px] mx-auto flex flex-col items-center justify-center">
         {/* --- Tag --- */}
@@ -74,14 +74,14 @@ const InsightsSuccess = () => {
           className="w-full flex flex-col md:px-4 sm:px-4 md:flex-row justify-between items-start gap-8"
         >
           <h2 className="text-3xl md:text-5xl font-['Forum'] text-[#0E3530] leading-snug md:w-[48%]">
-            Expert Strategies, Industry Trends & Real Results
+            Real Student Journeys, Proven Success & Global Achievements
           </h2>
 
           <p className="text-[15px] pt-6 md:text-[14px] text-[#0E3530] leading-[22.5px] md:w-[48%] opacity-90">
-            Stay ahead with the latest business insights, success stories, and
-            industry trends. Explore expert advice, real-world case studies, and
-            actionable strategies to drive growth and innovation in your
-            business.
+            Discover inspiring success stories and expert insights from students who turned their
+            study-abroad dreams into reality with Rhombus Education and Immigration Services.
+            From visa approvals to university placements, explore how our personalized guidance has helped
+            students achieve academic and professional success worldwide.
           </p>
         </motion.div>
 

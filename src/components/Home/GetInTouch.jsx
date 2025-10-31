@@ -255,11 +255,12 @@ const GetInTouch = () => {
                        bg-[rgb(244,245,241)] rounded-md hover:bg-white 
                        transition-colors duration-300 cursor-pointer group"
                             >
-                                <div className="flex items-center gap-3 text-[rgba(0,0,0,0.75)]">
+                                <div className="flex items-center gap-2 text-[rgba(0,0,0,0.75)]">
                                     <div className="bg-white w-8 h-8 flex item-center justify-center">
                                         <Phone className="w-5 h-5 text-[rgba(0,0,0,0.75)]" />
                                     </div>
-                                    <span className="text-base font-normal">1-800-356-8933</span>
+                                    <span className="text-base font-normal">8826841955</span>
+                                    <span className="text-base font-normal">8050796619</span>
                                 </div>
 
                                 <ArrowRight

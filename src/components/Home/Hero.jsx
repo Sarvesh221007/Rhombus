@@ -81,7 +81,7 @@ const HeroSection = () => {
                     className="w-full md:w-2/3 sm:w-full flex md:justify-end lg:justify-end sm:-mb-12 md:-mb-12 z-5"
                 >
                     <motion.img
-                        src="https://execor.vamtam.com/wp-content/uploads/2025/03/GettyImages-75546129.jpg"
+                        src={handImage}
                         alt="Education Hand"
                         className="rounded-lg shadow-xl object-cover 
               w-[100%] sm:w-[95%] sm: md:w-[100%] lg:w-[100%] 

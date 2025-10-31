@@ -125,14 +125,15 @@ const Footer = () => {
               Contact
             </h6>
           </div>
-          <ul className="space-y-2 text-md text-gray-300 font-semibold">
-            <li className="flex items-center gap-2">
+          <ul className="space-y-2 mr-6 text-md text-gray-300 font-semibold">
+            <li className="flex items-center">
               <Phone size={15} />{" "}
-              <a href="tel:1-800-356-8933">1-800-356-8933</a>
+              <a href="tel:1-800-356-8933">8826841955</a>
+              <a href="tel:1-800-356-8933">8050796619</a>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex items-center">
               <Mail size={15} />{" "}
-              <a href="mailto:info@execor.com">info@execor.com</a>
+              <a href="mailto:info@execor.com">Info@rhombuseducation.com</a>
             </li>
           </ul>
         </div>

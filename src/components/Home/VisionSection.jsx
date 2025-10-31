@@ -5,21 +5,37 @@ import { CheckCircle } from "lucide-react";
 const VisionSection = () => {
   const visionPoints = [
     {
-      title: "Our Focus",
+      title: "Empowering Global Education",
       description:
-        "We prioritize strategic clarity, sustainable growth, and measurable impact, ensuring businesses stay ahead in a dynamic market.",
+        "We strive to make studying abroad a seamless experience for every student by providing transparent guidance and end-to-end support throughout their journey.",
     },
     {
-      title: "Customer-Centric Approach",
+      title: "Personalized & Transparent Guidance",
       description:
-        "We prioritize understanding your business needs to deliver solutions that truly add value.",
+        "Our focus is on understanding each student’s goals, strengths, and aspirations to deliver tailored education and visa solutions built on trust and expertise.",
     },
     {
-      title: "Sustainable Growth",
+      title: "Commitment to Excellence",
       description:
-        "We believe in long-term partnerships that foster continuous growth and innovation.",
+        "Backed by 15+ years of experience and certifications from the British Council and ICEF, we ensure the highest standards of professionalism in every service we offer.",
+    },
+    {
+      title: "Global Partnerships",
+      description:
+        "We collaborate with top universities, education agents, and international networks to open doors of opportunity for students across the world.",
+    },
+    {
+      title: "Student-Centric Approach",
+      description:
+        "Every service at Rhombus is designed around the student—offering clarity, confidence, and continuous support from application to arrival.",
+    },
+    {
+      title: "Building Futures, Not Just Applications",
+      description:
+        "We believe education is a lifelong investment. Our mission is to help students and professionals achieve academic and career success across global borders.",
     },
   ];
+
 
   return (
     <section className="bg-white font-['DM Sans'] text-[rgba(0,0,0,0.75)] py-24 flex justify-center">
@@ -57,8 +73,8 @@ const VisionSection = () => {
           transition={{ duration: 0.8 }}
           className="text-[#0E3530] text-4xl sm:text-5xl leading-snug font-['Forum'] mb-14 max-w-5xl"
         >
-          We add value by focusing on understanding your business and applying
-          our experience and implementation approach.
+          We guide students toward global success through trusted education and immigration expertise.
+
         </motion.h2>
 
         {/* --- Vision Cards --- */}

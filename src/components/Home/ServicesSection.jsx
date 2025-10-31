@@ -6,38 +6,43 @@ import { Check } from "lucide-react";
 
 const servicesData = [
   {
-    title: "Business Consulting",
+    title: "🎓Student Visa Assistance",
     points: [
-      "Strategy development & growth",
-      "Market research & competitors",
-      "Risk management",
+      "Visa guidance for Australia, UK & Canada",
+      "Step-by-step process support",
+      "Immigration compliance assurance",
     ],
     img: "/home/servicelogo.svg",
   },
   {
-    title: "Marketing, Sales, & Retention",
+    title: "🏛️University Placement",
     points: [
-      "Brand positioning & messaging",
-      "Lead generation & sales",
-      "Customer retention & loyalty",
+      "Course & institution selection",
+      "Goal-based admission guidance",
+      "End-to-end application support",
     ],
     img: "/home/servicelogo2.svg",
   },
   {
-    title: "Operations Management",
+    title: "📄Application & Document Review",
     points: [
-      "Process optimization",
-      "Cost reduction & efficiency",
-      "KPI tracking & insights",
+      "Academic & financial review",
+      "University requirement check",
+      "Professional feedback & editing",
     ],
     img: "/home/servicelogo3.svg",
   },
   {
-    title: "Talent Acquisition",
-    points: ["Talent sourcing", "Employer branding", "Workforce planning"],
+    title: "🤝Consultancy for Education Agents",
+    points: [
+      "Partnered student services",
+      "University network access",
+      "Streamlined client management",
+    ],
     img: "/home/servicelogo4.svg",
   },
 ];
+
 
 const ServicesSection = () => {
   return (
@@ -81,8 +86,9 @@ const ServicesSection = () => {
 
           <div className="md:w-[50%] w-full">
             <p className="font-['DM Sans'] text-[16px] leading-[26px] text-[rgba(0,0,0,0.75)]">
-              Our mission is simple: to guide students toward a brighter future
-              by making studying abroad an achievable and exciting opportunity.
+              At Rhombus Education and Immigration Services, we help students achieve their study-abroad goals with expert visa guidance,
+              personalized university placements, and complete document support. Our team ensures a smooth, transparent, and successful
+              journey for every student and education partner.
             </p>
           </div>
         </motion.div>

@@ -6,28 +6,28 @@ import clientImage from "/home/client.jpg";
 
 const boxData = [
   {
-    title: "Global Partners",
-    text: "Collaborating with over 200 international universities and institutions.",
+    title: "Global University Partners",
+    text: "Collaborating with top universities across Australia, UK, Canada, USA, and Europe.",
     icon: <Globe2 className="w-6 h-6 text-[#0E3530]" />,
   },
   {
-    title: "Trusted Clients",
-    text: "Our clients include leading education providers and visa consultants worldwide.",
+    title: "Trusted by Students Worldwide",
+    text: "Thousands of students have successfully achieved their study abroad dreams with our guidance.",
     icon: <Users className="w-6 h-6 text-[#0E3530]" />,
   },
   {
-    title: "Student Success",
-    text: "Thousands of successful visa approvals and study placements.",
+    title: "Proven Visa Success",
+    text: "High visa approval rate backed by expert consultancy and up-to-date immigration knowledge.",
     icon: <Award className="w-6 h-6 text-[#0E3530]" />,
   },
   {
-    title: "Ongoing Support",
-    text: "We ensure client satisfaction with continuous post-visa assistance.",
+    title: "Dedicated Post-Visa Support",
+    text: "From accommodation to pre-departure briefings, we assist you beyond visa approval.",
     icon: <Headphones className="w-6 h-6 text-[#0E3530]" />,
   },
   {
-    title: "Future Vision",
-    text: "Expanding our partnerships to new continents and global education hubs.",
+    title: "Empowering Education Agents",
+    text: "Partnering with agents to deliver complete student services and seamless application management.",
     icon: <Rocket className="w-6 h-6 text-[#0E3530]" />,
   },
 ];
@@ -61,12 +61,11 @@ const ClientsSection = () => {
         className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 sm:gap-6 md:gap-8 mb-16 sm:mb-20"
       >
         <h2 className="font-['forum']  text-3xl sm:text-4xl md:text-5xl text-[#0E3530] w-full md:w-1/2 leading-tight">
-          Empowering Global Connections
+          Building Global Education Partnerships
         </h2>
         <p className="text-[rgba(0,0,0,0.75)] text-base sm:text-lg leading-relaxed w-full md:w-1/2 font-dm-sans">
-          Our clients trust us to deliver consistent results and lasting partnerships.
-          We collaborate with international institutions, government bodies, and education providers
-          to ensure excellence in every step of the student and client journey.
+          At Rhombus Education and Immigration Services, we proudly collaborate with universities, education agents, and students across the world.
+           Our network of trusted partners helps us provide reliable, transparent, and end-to-end solutions for studying abroad and visa processing.
         </p>
       </motion.div>
 

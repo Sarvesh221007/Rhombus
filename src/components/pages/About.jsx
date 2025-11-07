@@ -88,7 +88,7 @@ const About = () => {
           <img
             src={founder}
             alt="Founder"
-            className="w-96 md:w-[30rem] h-[38rem] object-cover rounded-lg shadow-xl"
+            className="w-96 md:w-[28rem] h-[32rem] object-cover rounded-lg shadow-xl"
           />
           <div
             className="absolute"
@@ -218,7 +218,7 @@ const About = () => {
           <img
             src={coFounder}
             alt="Founder"
-            className="w-96 md:w-[30rem] h-[38rem] object-cover rounded-lg shadow-xl"
+            className="w-96 md:w-[28rem] h-[32rem] object-cover rounded-lg shadow-xl"
           />
           <div
             className="absolute"
